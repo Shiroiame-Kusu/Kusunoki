@@ -360,7 +360,7 @@ color: rgb(30,152,255);
 var title1 = 'BWMC OOM PART'
 var title2 = 'Edited By Shiroiame Kusu'
 var content = `
-版 本 号：1.5
+版 本 号：1.5.1.1
 更新日期：2022-07-11
 
 主页:  https://cmu.bwmc.live
