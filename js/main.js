@@ -158,6 +158,7 @@ function getWeather() {
 }
 
 getWeather();
+
 //获取时间
 var t = null;
 t = setTimeout(time, 1000);
