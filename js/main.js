@@ -43,16 +43,17 @@ window.addEventListener('load', function () {
     }, 800);
 
     //延迟加载音乐播放器
-    var element = document.createElement("script");
-    element.src = "./js/music.js";
-    document.body.appendChild(element);
+    //var element = document.createElement("script");
+    //element.src = "./js/music.js";
+    //document.body.appendChild(element);
 
     //中文字体缓加载-此处写入字体源文件
     //先行加载简体中文子集，后续补全字集
     //由于压缩过后的中文字体仍旧过大，可转移至对象存储或 CDN 加载
     const font = new FontFace(
         "MiSans",
-        "url(" + "https://cdn.bwmc.live/cdn-content/MiSans-Regular.woff2" + ")"
+        //"url(" + "https://cdn.bwmc.live/cdn-content/MiSans-Regular.woff2" + ")"
+        "url(" + "./font/MiSans-Regular.woff2" + ")"
     );
     document.fonts.add(font);
 
@@ -372,11 +373,11 @@ color: rgb(30,152,255);
 `
 var title1 = 'BWMC OOM PART'
 var content = `
-版 本 号：1.4
+版 本 号：1.5
 更新日期：2022-07-11
 
 主页:  https://cmu.bwmc.live
-Github:  https://github.com/illusorynight/bwmc.live
+Github:  https://github.com/Shiroiame-Kusu/bwmc.live
 `
-console.log(`%c${title1} %c${title2}
+console.log(`%c${title1}
 %c${content}`, styleTitle1, styleTitle2, styleContent)
