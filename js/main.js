@@ -344,7 +344,7 @@ for (var day of days) {
 }
 
 //控制台输出
-console.clear();
+//console.clear();
 var styleTitle1 = `
 font-size: 20px;
 font-weight: 600;
@@ -358,6 +358,7 @@ var styleContent = `
 color: rgb(30,152,255);
 `
 var title1 = 'BWMC OOM PART'
+var title2 = 'Edited By Shiroiame Kusu'
 var content = `
 版 本 号：1.5
 更新日期：2022-07-11
