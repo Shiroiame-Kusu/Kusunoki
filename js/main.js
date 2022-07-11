@@ -43,15 +43,16 @@ window.addEventListener('load', function () {
     }, 800);
 
     //延迟加载音乐播放器
-    var element = document.createElement("script");
-    element.src = "./js/music.js";
-    document.body.appendChild(element);
+    //var element = document.createElement("script");
+    //element.src = "./js/music.js";
+    //document.body.appendChild(element);
 
     //中文字体缓加载-此处写入字体源文件
     //先行加载简体中文子集，后续补全字集
     //由于压缩过后的中文字体仍旧过大，可转移至对象存储或 CDN 加载
     const font = new FontFace(
         "MiSans",
+        //"url(" + "https://cdn.bwmc.live/cdn-content/MiSans-Regular.woff2" + ")"
         "url(" + "./font/MiSans-Regular.woff2" + ")"
     );
     document.fonts.add(font);
@@ -130,20 +131,34 @@ $('#hitokoto').click(function () {
     }
 });
 
-//获取天气
-//每日限量 100 次
-//请前往 https://www.tianqiapi.com/ 申请（免费）
-fetch('https://www.yiketianqi.com/free/day?appid=43656176&appsecret=I42og6Lm&unescape=1')
-    .then(response => response.json())
-    .then(data => {
-        $('#wea_text').html(data.wea)
-        $('#city_text').html(data.city)
-        $('#tem_night').html(data.tem_night)
-        $('#tem_day').html(data.tem_day)
-        $('#win_text').html(data.win)
-        $('#win_speed').html(data.win_speed)
-    })
-    .catch(console.error)
+const add_id = "wrknltonr0foslhs"; // app_id
+const app_secret = "Nlh1c0F6d0ZDU2pDR0J3YVBVbkhudz09"; // app_secret
+const key = "f76f94fe1ff64b14933c34f305f50dde" // key
+function getWeather() {
+    fetch("https://www.mxnzp.com/api/ip/self?app_id=" + add_id + "&app_secret=" + app_secret)
+        .then(response => response.json())
+        .then(data => {
+            let str = data.data.city
+            let city = str.replace(/市/g, '')
+            $('#city_text').html(city);
+            fetch("https://geoapi.qweather.com/v2/city/lookup?location=" + city + "&number=1&key=" + key)
+                .then(response => response.json())
+                .then(location => {
+                    let id = location.location[0].id
+                    fetch("https://devapi.qweather.com/v7/weather/now?location=" + id + "&key=" + key)
+                        .then(response => response.json())
+                        .then(weather => {
+                            $('#wea_text').html(weather.now.text)
+                            $('#tem_text').html(weather.now.temp)
+                            $('#win_text').html(weather.now.windDir)
+                            $('#win_speed').html(weather.now.windScale)
+                        })
+                })
+        })
+        .catch(console.error);
+}
+
+getWeather();
 
 //获取时间
 var t = null;
@@ -211,12 +226,12 @@ $("#email").mouseover(function () {
     $("#link-text").html("或许我......在这里");
 });
 $("#telegram").mouseover(function () {
-    $("#link-text").html("你懂的 ~");
+    $("#link-text").html("tg me?");
 }).mouseout(function () {
     $("#link-text").html("或许我......在这里");
 });
 $("#twitter").mouseover(function () {
-    $("#link-text").html("你懂的 ~");
+    $("#link-text").html("Don't do this");
 }).mouseout(function () {
     $("#link-text").html("或许我......在这里");
 });
@@ -231,7 +246,7 @@ $('#switchmore').on('click', function () {
         $("#change1").html("哎呀，这都被你发现了（ 再点击一次可关闭 ）");
     } else {
         $('#container').attr('class', 'container');
-        $("#change").html("Hello&nbsp;World&nbsp;!");
+        $("#change").html("Where?&nbsp;No&nbsp;Where!");
         $("#change1").html("The OOM Part Of BWMC, For Me");
     }
 });
@@ -356,21 +371,13 @@ color: rgb(244,167,89);
 var styleContent = `
 color: rgb(30,152,255);
 `
-var title1 = '無名の主页'
-var title2 = `
- _____ __  __  _______     ____     __
-|_   _|  \\/  |/ ____\\ \\   / /\\ \\   / /
-  | | | \\  / | (___  \\ \\_/ /  \\ \\_/ / 
-  | | | |\\/| |\\___ \\  \\   /    \\   /  
- _| |_| |  | |____) |  | |      | |   
-|_____|_|  |_|_____/   |_|      |_|                                                     
-`
+var title1 = 'BWMC OOM PART'
 var content = `
-版 本 号：3.0
-更新日期：2022-05-20
+版 本 号：1.5
+更新日期：2022-07-11
 
-主页:  https://www.imsyy.top
-Github:  https://github.com/imsyy/home
+主页:  https://cmu.bwmc.live
+Github:  https://github.com/Shiroiame-Kusu/bwmc.live
 `
-console.log(`%c${title1} %c${title2}
+console.log(`%c${title1}
 %c${content}`, styleTitle1, styleTitle2, styleContent)

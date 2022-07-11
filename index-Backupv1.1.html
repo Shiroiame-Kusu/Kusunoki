@@ -17,6 +17,10 @@
     <title>BWMC OOM Part</title>
     <!-- jQuery -->
     <script src="./cdn/jquery.min.js"></script>
+    <!-- Google Fonts -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.geekzu.org/css2?family=Noto+Sans+SC&display=swap" rel="stylesheet"> -->
     <!-- 引入样式 -->
     <link rel="stylesheet" type="text/css"
         href="./cdn/bootstrap.min.css">
@@ -100,7 +104,7 @@
                             <div class="main-img">
                                 <img src="./img/icon/logo.png" alt="img">
                                 <div class="img-title">
-                                    <span class="img-title-big">bwmc</span>
+                                    <span class="img-title">bwmc</span>
                                     <span class="img-text">.live</span>
                                 </div>
                             </div>
@@ -115,7 +119,7 @@
                             </div>
                             <!--社交链接-->
                             <div class="social" id="social">
-                                <a href="https://github.com/Shiroiame-Kusu" class="link" id="github" style="margin-left: 4px"
+                                <a href="https://github.com/illusorynight" class="link" id="github" style="margin-left: 4px"
                                     target="_blank">
                                     <i class="fa-brands fa-github"></i>
                                 </a>
@@ -126,9 +130,9 @@
                                 <a href="mailto:amenai@bwmc.live" class="link" id="email">
                                     <i class="fa-solid fa-envelope"></i>
                                 </a>
-                                <a href="https://t.me/Shiroiame_Kusu" class="link" id="telegram" target="_blank">
+                                <!--<a href="https://t.me/bottom_user" class="link" id="telegram" target="_blank">
                                     <i class="fa-brands fa-telegram"></i>
-                                </a>
+                                </a>-->
                                 <a href="https://twitter.com/Shiroiame_Kusu" class="link" id="twitter" target="_blank">
                                     <i class="fa-brands fa-twitter"></i>
                                 </a>
@@ -160,6 +164,33 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <!--音乐-->
+                                    <div class="music" id="music">
+                                        <div class="music-all">
+                                            <div class="music-button">
+                                                <div id="music-open">音乐列表</div>
+                                                <div id="music-close">回到一言</div>
+                                            </div>
+                                            <div class="music-control">
+                                                <i class="fa-solid fa-backward-step" id="last"></i>
+                                                <div id="play">
+                                                    <i class="fa-solid fa-play"></i>
+                                                </div>
+                                                <i class="fa-solid fa-forward-step" id="next"></i>
+                                            </div>
+                                            <div class="music-menu">
+                                                <div class="music-text">
+                                                    <span id="music-name">未播放音乐</span>
+                                                </div>
+                                                <div class="music-volume" style="display: none;">
+                                                    <div id="volume-ico">
+                                                        <i class="fa-solid fa-volume-low"></i>
+                                                    </div>
+                                                    <input type="range" min="0" max="1" step="0.01" id="volume">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col times">
                                     <!--时间-->
@@ -171,9 +202,10 @@
                                         <div class="weather">
                                             <span id="city_text">天气</span>&nbsp;
                                             <span id="wea_text">加载失败</span>&nbsp;
-                                            <span id="tem_text">*</span>°C&nbsp;
+                                            <span id="tem_night"></span>°C~
+                                            <span id="tem_day"></span>°C&nbsp;
                                             <span id="win_text"></span>
-                                            <span id="win_speed">*</span>级
+                                            <span id="win_speed"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -230,6 +262,14 @@
                                             </div>
                                         </a>
                                     </div>
+                                    <!--<div class="col">
+                                        <a href="https://lab.imsyy.top/" target="_blank">
+                                            <div class="link-card cards">
+                                                <i class="fa-solid fa-flask"></i>
+                                                <span class="link-name">实验室</span>
+                                            </div>
+                                        </a>
+                                    </div>-->
                                 </div>
                             </div>
                         </div>
@@ -278,10 +318,57 @@
                             </div>
                         </div>
                     </div>
+                    <div class="line">
+                        <i class="fa-solid fa-angle-left"></i>
+                        <span class="line-text">杂七杂八</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
                     <!--网站链接-->
                     <div class="row">
+                        <!--<div class="col">
+                            <a href="https://status.imsyy.top/" target="_blank">
+                                <div class="link-card cards">
+                                    <span class="link-name">站点监测</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col 2">
+                            <a href="https://player.imsyy.top/" target="_blank">
+                                <div class="link-card cards">
+                                    <span class="link-name">播放器</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="https://write.imsyy.top/" target="_blank">
+                                <div class="link-card cards">
+                                    <span class="link-name">编辑器</span>
+                                </div>
+                            </a>
+                        </div>-->
                     </div>
                     <div class="row" style="margin-top: 1.5rem;">
+                        <!--<div class="col">
+                            <a href="https://photo.imsyy.top/" target="_blank">
+                                <div class="link-card cards">
+                                    <span class="link-name">时光相册</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col 2">
+                            <a href="https://share.imsyy.top/" target="_blank">
+                                <div class="link-card cards">
+                                    <span class="link-name">文件库</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a id="openmore">
+                                <div class="link-card cards">
+                                    <span class="link-name">更多</span>
+                                </div>
+                            </a>
+                        </div>-->
                     </div>
                 </div>
                 <!--更多页面-->
@@ -297,10 +384,89 @@
                                 <span class="img-title">bwmc</span>
                                 <span class="img-text">.live</span><br />
                                 <span class="img-text">&nbsp;&nbsp;</span>
-                                <a href="https://github.com/Shiroiame-Kusu" target="_blank">
+                                <a href="https://github.com/illusorynight" target="_blank">
                                     <i class="fa-brands fa-github"></i>
                                 </a>
                             </div>
+                            <!--更多内容-->
+                            <div class="accordion" id="accordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            壁纸设置
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <div class="set">
+                                                <div class="wallpaper" id="wallpaper">
+                                                    <div class="form-radio">
+                                                        <input type="radio" class="set-wallpaper" style="display: none;"
+                                                            id="radio1" value="1" name="wallpaper-type">
+                                                        <label for="radio1">默认壁纸</label>
+                                                    </div>
+                                                    <div class="form-radio">
+                                                        <input type="radio" class="set-wallpaper" style="display: none;"
+                                                            id="radio2" value="2" name="wallpaper-type">
+                                                        <label for="radio2">每日一图</label>
+                                                    </div>
+                                                    <div class="form-radio">
+                                                        <input type="radio" class="set-wallpaper" style="display: none;"
+                                                            id="radio3" value="3" name="wallpaper-type">
+                                                        <label for="radio3">随机风景</label>
+                                                    </div>
+                                                    <div class="form-radio">
+                                                        <input type="radio" class="set-wallpaper" style="display: none;"
+                                                            id="radio4" value="4" name="wallpaper-type">
+                                                        <label for="radio4">随机动漫</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--更新日志-->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                            更新日志
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <div class="upnote">
+                                                <span class="uptext">
+                                                    <i class="fa-solid fa-circle-plus"></i>&nbsp;音乐歌单支持快速自定义
+                                                </span>
+                                                <span class="uptext">
+                                                    <i class="fa-solid fa-circle-plus"></i>&nbsp;壁纸支持个性化设置
+                                                </span>
+                                                <span class="uptext">
+                                                    <i class="fa-solid fa-circle-plus"></i>&nbsp;音乐播放器支持音量控制
+                                                </span>
+                                                <span class="uptext">
+                                                    <i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;时光胶囊显示错误</span>
+                                                <span class="uptext">
+                                                    <i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;移动端动画及细节</span>
+                                                <span class="uptext">
+                                                    <i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;图标更换为 Font
+                                                    Awesome</span>
+                                                <span class="uptext">
+                                                    <i class="fa-solid fa-rotate-left"></i>
+                                                    <a href="./old/" style="color:#efefef">返回旧版站点</a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!--Aplayer-->
                         <div class="box-right">
                             <div id="aplayer"></div>
@@ -323,13 +489,13 @@
         </footer>
     </section>
     <!-- sw.js -->
-    <!--<script>
+    <script>
         if ("serviceWorker" in navigator) {
             window.addEventListener("load", function () {
                 navigator.serviceWorker.register("sw.js");
             });
         }
-    </script>-->
+    </script>
     <!-- noscript -->
     <noscript>
         <div class="noscript fixed-top">请开启 JavaScript</div>
@@ -340,6 +506,8 @@
     <script type="text/javascript" src="./js/js.cookie.js"></script>
     <script type="text/javascript" src="./js/set.js"></script>
     <script type="text/javascript" src="./js/cursor.js"></script>
+    <!--<script type="text/javascript"
+        src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/bootstrap/5.1.0/js/bootstrap.min.js"></script>-->
     <script type="text/javascript" src="./cdn/bootstrap.min.js">
     </script>
 </body>
