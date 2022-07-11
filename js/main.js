@@ -130,21 +130,34 @@ $('#hitokoto').click(function () {
     }
 });
 
-//获取天气
-//每日限量 100 次
-//请前往 https://www.tianqiapi.com/ 申请（免费）
-fetch('https://www.yiketianqi.com/free/day?appid=43656176&appsecret=I42og6Lm&unescape=1')
-    .then(response => response.json())
-    .then(data => {
-        $('#wea_text').html(data.wea)
-        $('#city_text').html(data.city)
-        $('#tem_night').html(data.tem_night)
-        $('#tem_day').html(data.tem_day)
-        $('#win_text').html(data.win)
-        $('#win_speed').html(data.win_speed)
-    })
-    .catch(console.error)
+const add_id = "wrknltonr0foslhs"; // app_id
+const app_secret = "Nlh1c0F6d0ZDU2pDR0J3YVBVbkhudz09"; // app_secret
+const key = "f76f94fe1ff64b14933c34f305f50dde" // key
+function getWeather() {
+    fetch("https://www.mxnzp.com/api/ip/self?app_id=" + add_id + "&app_secret=" + app_secret)
+        .then(response => response.json())
+        .then(data => {
+            let str = data.data.city
+            let city = str.replace(/市/g, '')
+            $('#city_text').html(city);
+            fetch("https://geoapi.qweather.com/v2/city/lookup?location=" + city + "&number=1&key=" + key)
+                .then(response => response.json())
+                .then(location => {
+                    let id = location.location[0].id
+                    fetch("https://devapi.qweather.com/v7/weather/now?location=" + id + "&key=" + key)
+                        .then(response => response.json())
+                        .then(weather => {
+                            $('#wea_text').html(weather.now.text)
+                            $('#tem_text').html(weather.now.temp)
+                            $('#win_text').html(weather.now.windDir)
+                            $('#win_speed').html(weather.now.windScale)
+                        })
+                })
+        })
+        .catch(console.error);
+}
 
+getWeather();
 //获取时间
 var t = null;
 t = setTimeout(time, 1000);
