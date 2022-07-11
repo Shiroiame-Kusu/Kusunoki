@@ -52,7 +52,7 @@ window.addEventListener('load', function () {
     //由于压缩过后的中文字体仍旧过大，可转移至对象存储或 CDN 加载
     const font = new FontFace(
         "MiSans",
-        "url(" + "./font/MiSans-Regular.woff2" + ")"
+        "url(" + "https://cdn.bwmc.live/cdn-content/MiSans-Regular.woff2" + ")"
     );
     document.fonts.add(font);
 
@@ -211,12 +211,12 @@ $("#email").mouseover(function () {
     $("#link-text").html("或许我......在这里");
 });
 $("#telegram").mouseover(function () {
-    $("#link-text").html("你懂的 ~");
+    $("#link-text").html("tg me?");
 }).mouseout(function () {
     $("#link-text").html("或许我......在这里");
 });
 $("#twitter").mouseover(function () {
-    $("#link-text").html("你懂的 ~");
+    $("#link-text").html("Don't do this");
 }).mouseout(function () {
     $("#link-text").html("或许我......在这里");
 });
@@ -231,7 +231,7 @@ $('#switchmore').on('click', function () {
         $("#change1").html("哎呀，这都被你发现了（ 再点击一次可关闭 ）");
     } else {
         $('#container').attr('class', 'container');
-        $("#change").html("Hello&nbsp;World&nbsp;!");
+        $("#change").html("Where?&nbsp;No&nbsp;Where!");
         $("#change1").html("The OOM Part Of BWMC, For Me");
     }
 });
@@ -356,21 +356,13 @@ color: rgb(244,167,89);
 var styleContent = `
 color: rgb(30,152,255);
 `
-var title1 = '無名の主页'
-var title2 = `
- _____ __  __  _______     ____     __
-|_   _|  \\/  |/ ____\\ \\   / /\\ \\   / /
-  | | | \\  / | (___  \\ \\_/ /  \\ \\_/ / 
-  | | | |\\/| |\\___ \\  \\   /    \\   /  
- _| |_| |  | |____) |  | |      | |   
-|_____|_|  |_|_____/   |_|      |_|                                                     
-`
+var title1 = 'BWMC OOM PART'
 var content = `
-版 本 号：3.0
-更新日期：2022-05-20
+版 本 号：1.4
+更新日期：2022-07-11
 
-主页:  https://www.imsyy.top
-Github:  https://github.com/imsyy/home
+主页:  https://cmu.bwmc.live
+Github:  https://github.com/illusorynight/bwmc.live
 `
 console.log(`%c${title1} %c${title2}
 %c${content}`, styleTitle1, styleTitle2, styleContent)
