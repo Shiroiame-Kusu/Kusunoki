@@ -43,9 +43,9 @@ window.addEventListener('load', function () {
     }, 800);
 
     //延迟加载音乐播放器
-    //var element = document.createElement("script");
-    //element.src = "./js/music.js";
-    //document.body.appendChild(element);
+    var element = document.createElement("script");
+    element.src = "./js/music.js";
+    document.body.appendChild(element);
 
     //中文字体缓加载-此处写入字体源文件
     //先行加载简体中文子集，后续补全字集
@@ -360,7 +360,7 @@ color: rgb(30,152,255);
 var title1 = 'BWMC OOM PART'
 var title2 = 'Edited By Shiroiame Kusu'
 var content = `
-版 本 号：1.5.1.1
+版 本 号：1.5.1.2
 更新日期：2022-07-11
 
 主页:  https://cmu.bwmc.live
