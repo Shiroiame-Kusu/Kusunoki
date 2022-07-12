@@ -43,9 +43,9 @@ window.addEventListener('load', function () {
     }, 800);
 
     //延迟加载音乐播放器
-    //var element = document.createElement("script");
-    //element.src = "./js/music.js";
-    //document.body.appendChild(element);
+    var element = document.createElement("script");
+    element.src = "./js/music.js";
+    document.body.appendChild(element);
 
     //中文字体缓加载-此处写入字体源文件
     //先行加载简体中文子集，后续补全字集
@@ -348,23 +348,33 @@ for (var day of days) {
 var styleTitle1 = `
 font-size: 20px;
 font-weight: 600;
-color: rgb(244,167,89);
+color: rgb(0,255,255);
 `
 var styleTitle2 = `
 font-size:12px;
-color: rgb(244,167,89);
+color: rgb(0,255,255);
 `
 var styleContent = `
-color: rgb(30,152,255);
+color: rgb(0,255,255);
 `
 var title1 = 'BWMC OOM PART'
 var title2 = 'Edited By Shiroiame Kusu'
 var content = `
-版 本 号：1.5.1.1
-更新日期：2022-07-11
+版 本 号：1.5.1.4
+更新日期：Jul.12th.2022
+更新内容：
+1.5.1.4: 重新调整播放器布局
+1.5.1.3: 重新添加音乐播放器
+         优化js与html
+         同步上游项目更新
+         修复一些奇葩的bug
+         例如1.5.1.1打开音乐播放器会整个消失
 
-主页:  https://cmu.bwmc.live
+主页:  https://bwmc.live
 Github:  https://github.com/Shiroiame-Kusu/bwmc.live
+邮箱：kusu@kusu.moe
+
+Based on https://github.com/imsyy/home
 `
-console.log(`%c${title1}
+console.log(`%c${title1} %c${title2}
 %c${content}`, styleTitle1, styleTitle2, styleContent)

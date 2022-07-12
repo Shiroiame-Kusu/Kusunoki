@@ -32,7 +32,7 @@
         src="./cdn/iziToast.min.js">
     </script>
     <!-- Matomo -->
-    <script>
+    <!--<script>
   var _paq = window._paq = window._paq || [];
   /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
   _paq.push(['trackPageView']);
@@ -44,7 +44,7 @@
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
     g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
   })();
-    </script>
+    </script>-->
 <!-- End Matomo Code -->
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -59,9 +59,9 @@
             "/upgrade-your-browser/index.html?referrer=" + encodeURIComponent(window.location.href);
     </script>
     <!-- PWA -->
-    <link rel="manifest" href="/manifest.json">
+    <!--<link rel="manifest" href="/manifest.json">-->
     <!-- 51.LA 统计 -->
-    <script src="./js/51LA.js"></script>
+    <!--<script src="./js/51LA.js"></script>-->
 </head>
 
 <body>
@@ -140,7 +140,6 @@
                     </div>
                     <div class="col right">
                         <div class="main-right">
-                            <!--功能区-->
                             <div class="row rightone" id="rightone">
                                 <div class="col hitokotos">
                                     <!--一言-->
@@ -152,9 +151,36 @@
                                         </div>
                                         <!--切换音乐结束-->
                                         <div class="hitokoto-all">
-                                            <div class="hitokoto-text"><span id="hitokoto_text">谁会在乎呢......</span>
+                                            <div class="hitokoto-text"><span id="hitokoto_text">Who&nbsp;Cares......</span>
                                             </div>
                                             <div class="hitokoto-from">-「&nbsp;<span id="from_text">忤雨</span>&nbsp;」
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--音乐-->
+                                    <div class="music" id="music">
+                                        <div class="music-all">
+                                            <div class="music-button">
+                                                <div id="music-open">音乐列表</div>
+                                                <div id="music-close">回到一言</div>
+                                            </div>
+                                            <div class="music-control">
+                                                <i class="fa-solid fa-backward-step" id="last"></i>
+                                                <div id="play">
+                                                    <i class="fa-solid fa-play"></i>
+                                                </div>
+                                                <i class="fa-solid fa-forward-step" id="next"></i>
+                                            </div>
+                                            <div class="music-menu">
+                                                <div class="music-text">
+                                                    <span id="music-name">未播放音乐</span>
+                                                </div>
+                                                <div class="music-volume" style="display: none;">
+                                                    <div id="volume-ico">
+                                                        <i class="fa-solid fa-volume-low"></i>
+                                                    </div>
+                                                    <input type="range" min="0" max="1" step="0.01" id="volume">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -292,21 +318,57 @@
                         <!--左侧内容-->
                         <div class="box-left">
                             <div class="img-title">
-                                <span class="img-title">bwmc</span>
-                                <span class="img-text">.live</span><br />
+                                <span class="img-title-big">bwmc</span>
+                                <span class="img-text">.live</span><br/>
                                 <span class="img-text">&nbsp;&nbsp;</span>
                                 <a href="https://github.com/Shiroiame-Kusu" target="_blank">
                                     <i class="fa-brands fa-github"></i>
                                 </a>
                             </div>
+                           <!--更新日志-->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> 更新日志
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                   <div class="accordion-body">
+                                    <div class="upnote">
+                                        <span class="uptext">
+                                                <i class="fa-solid fa-circle-plus"></i>&nbsp;重新添加音乐播放器
+                                            </span>
+                                        <span class="uptext">
+                                                <i class="fa-solid fa-circle-plus"></i>&nbsp;优化js与html
+                                            </span>
+                                        <span class="uptext">
+                                                <i class="fa-solid fa-circle-plus"></i>&nbsp;同步上游项目更新
+                                            </span>
+                                        <span class="uptext">
+                                                <i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;修复天气 API
+                                            </span>
+                                        <span class="uptext">
+                                                <i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;修复一些奇葩的bug
+                                            </span>
+                                        <span class="uptext">
+                                                <i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;移动端动画及细节
+                                            </span>
+                                    </div>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
                         <!--Aplayer-->
                         <div class="box-right">
-                            <div id="aplayer"></div>
+                            <div id="aplayer">
+                                <span>音乐播放器加载失败</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
+        </div>    
+    </main>
         <!-- 版权信息 -->
         <footer id="footer" class="fixed-bottom footer">
             <div class="power">Copyright&nbsp;&copy;&nbsp;2020
