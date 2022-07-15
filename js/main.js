@@ -360,10 +360,11 @@ color: rgb(0,255,255);
 var title1 = 'BWMC OOM PART'
 var title2 = 'Edited By Shiroiame Kusu'
 var content = `
-版 本 号：1.5.2-1
-更新日期：Jul.14th.2022
+版 本 号：1.5.2-2
+更新日期：Jul.15th.2022
 更新内容：（小版本都是小修小补）
 1.5.2: 修复upgrade-your-browser界面
+       调整404界面
 1.5.1.4: 重新调整播放器布局
 1.5.1.3: 重新添加音乐播放器
          优化js与html
