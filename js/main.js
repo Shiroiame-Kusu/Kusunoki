@@ -344,7 +344,7 @@ for (var day of days) {
 }
 
 //控制台输出
-//console.clear();
+console.clear();
 var styleTitle1 = `
 font-size: 20px;
 font-weight: 600;
