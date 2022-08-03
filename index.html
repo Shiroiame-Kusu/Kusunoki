@@ -35,7 +35,7 @@
     <!--<script type="text/javascript" src="./js/matomo.js"></script>-->
 <!-- End Matomo Code -->
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <!-- Aplayer -->
     <link rel="stylesheet" href="./cdn/APlayer.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -114,6 +114,9 @@
                                 <a href="https://twitter.com/Shiroiame_Kusu" class="link" id="twitter" target="_blank">
                                     <i class="fa-brands fa-twitter"></i>
                                 </a>
+                                <a href="https://space.bilibili.com/358682633" class="link" id="bilibili" target="_blank">
+                                    <i class="fa-brands fa-bilibili"></i>
+                                </a>
                                 <a id="link-text">或许我......在这里</a>
                             </div>
                         </div>
@@ -179,9 +182,9 @@
                                         <div class="weather">
                                             <span id="city_text">天气</span>&nbsp;
                                             <span id="wea_text">加载失败</span>&nbsp;
-                                            <span id="tem_text">*</span>°C&nbsp;
-                                            <span id="win_text"></span>
-                                            <span id="win_speed">*</span>级
+                                            <span id="tem_text"></span>
+                                            <span id="win_text">次数</span>
+                                            <span id="win_speed">超限</span>
                                         </div>
                                     </div>
                                 </div>
@@ -320,6 +323,8 @@
                                    <div class="accordion-body">
                                     <div class="upnote">
                                         <span class="uptext">
+                                                <i class="fa-solid fa-circle-plus"></i>&nbsp;再次同步上游项目更新
+                                        <span class="uptext">
                                                 <i class="fa-solid fa-circle-plus"></i>&nbsp;重新添加音乐播放器
                                             </span>
                                         <span class="uptext">
@@ -355,12 +360,13 @@
     </main>
         <!-- 版权信息 -->
         <footer id="footer" class="fixed-bottom footer">
-            <div class="power">Copyright&nbsp;&copy;&nbsp;2020
+            <div class="power">
+                <span id="power">Copyright&nbsp;&copy;&nbsp;2020
                 <script>
                     document.write(' - ' + (new Date()).getFullYear())
-                </script>&nbsp;<a href="https://bwmc.live">BWMC&nbsp;Community</a>&nbsp;&nbsp;&nbsp;&&nbsp;&nbsp;&nbsp;<a href="https://cmu.bwmc.live/about-creator/">Edited&nbsp;By&nbsp;Shiroiame&nbsp;Kusu&nbsp;&nbsp;&</a>&nbsp;
+                </script>&nbsp;<a href="https://bwmc.live">BWMC&nbsp;Community</a>&nbsp;&nbsp;&nbsp;&&nbsp;&nbsp;&nbsp;<a href="https://cmu.bwmc.live/about-creator/">Edited&nbsp;By&nbsp;Shiroiame&nbsp;Kusu&nbsp;&nbsp;&</a>&nbsp;</span>
                 <!-- 以下信息请不要修改哦 -->
-                Made&nbsp;by&nbsp;<a href="https://github.com/imsyy/home" target="_blank">imsyy</a>
+                <span id="made">Made&nbsp;by&nbsp;<a href="https://github.com/imsyy/home" target="_blank">imsyy</a></span>
             </div>
             <!-- 歌词显示 -->
             <div id="lrc"></div>
