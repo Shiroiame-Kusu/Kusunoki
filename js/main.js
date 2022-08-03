@@ -135,9 +135,9 @@ function getWeather() {
                         .then(response => response.json())
                         .then(weather => {
                             $('#wea_text').html(weather.now.text)
-                            $('#tem_text').html(weather.now.temp)
+                            $('#tem_text').html(weather.now.temp + "°C&nbsp;")
                             $('#win_text').html(weather.now.windDir)
-                            $('#win_speed').html(weather.now.windScale)
+                            $('#win_speed').html(weather.now.windScale + "级")
                         })
                 })
         })
@@ -218,6 +218,11 @@ $("#telegram").mouseover(function () {
 });
 $("#twitter").mouseover(function () {
     $("#link-text").html("Don't do this");
+}).mouseout(function () {
+    $("#link-text").html("或许我......在这里");
+});
+$("#bilibili").mouseover(function () {
+    $("#link-text").html("来 B 站看看 ~");
 }).mouseout(function () {
     $("#link-text").html("或许我......在这里");
 });
@@ -360,17 +365,10 @@ color: rgb(0,255,255);
 var title1 = 'BWMC OOM PART'
 var title2 = 'Edited By Shiroiame Kusu'
 var content = `
-版 本 号：1.5.2-6
-更新日期：Jul.15th.2022
+版 本 号：1.6.0-1
+更新日期：Aug.3rd.2022
 更新内容：（小版本都是小修小补）
-1.5.2: 修复upgrade-your-browser界面
-       调整404界面
-1.5.1.4: 重新调整播放器布局
-1.5.1.3: 重新添加音乐播放器
-         优化js与html
-         同步上游项目更新
-         修复一些奇葩的bug
-         例如1.5.1.1打开音乐播放器会整个消失
+1.6: 同步上游项目更新
 
 主页:  https://bwmc.live
 Github:  https://github.com/Shiroiame-Kusu/bwmc.live

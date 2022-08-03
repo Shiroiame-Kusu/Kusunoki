@@ -254,7 +254,12 @@ span#change {
     font-size: 1.45rem;
     margin: 2px 12px;
 }
-
+/*小于512px时*/
+@media (max-width: 512px) {
+    #made {
+        display: none;
+    }
+}
 /*
 .social .link i:hover {
     font-size: 2.5rem;
