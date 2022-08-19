@@ -436,7 +436,15 @@ span#change {
     -ms-animation: fade 0.5s;
 }
 
-#music-open,
+#music-open {
+    background: rgb(255 255 255 / 15%);
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin: 0px 6px;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
 #music-close {
     background: rgb(255 255 255 / 15%);
     padding: 2px 8px;
@@ -447,7 +455,9 @@ span#change {
     white-space: nowrap;
 }
 
-#music-open:hover,
+#music-open:hover {
+    background: rgb(255 255 255 / 30%);
+}
 #music-close:hover {
     background: rgb(255 255 255 / 30%);
 }
