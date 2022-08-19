@@ -365,9 +365,10 @@ color: rgb(0,255,255);
 var title1 = 'BWMC OOM PART'
 var title2 = 'Edited By Shiroiame Kusu'
 var content = `
-版 本 号：1.6.0-R5
-更新日期：Aug.9th.2022
+版 本 号：1.7.0-B1
+更新日期：Aug.19th.2022
 更新内容：（小版本都是小修小补）
+1.7：尝试增加PWA支持
 1.6: 同步上游项目更新
 
 主页:  https://bwmc.live

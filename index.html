@@ -46,6 +46,8 @@
         if ( /*@cc_on!@*/ false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href =
             "/upgrade-your-browser/index.html?referrer=" + encodeURIComponent(window.location.href);
     </script>
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
 </head>
 
 <body>
@@ -373,6 +375,14 @@
             <div id="lrc"></div>
         </footer>
     </section>
+     <!-- sw.js -->
+     <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker.register("sw.js");
+            });
+        }
+    </script>
     <noscript>
         <div class="noscript fixed-top">请开启 JavaScript</div>
     </noscript>
