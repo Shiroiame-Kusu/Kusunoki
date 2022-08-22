@@ -21,7 +21,8 @@
         href="./cdn/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/mobile.css">
-    <link rel="stylesheet" type="text/css" href="./css/loading.css">
+    <!--<link rel="stylesheet" type="text/css" href="./css/loading.css">-->
+    <link rel="stylesheet" type="text/css" href="./css/preload.css">
     <link rel="stylesheet" type="text/css" href="./css/animation.css">
     <link rel="stylesheet" type="text/css" href="./css/cursor.css">
     <link rel="icon" href="./favicon.ico">
@@ -52,7 +53,14 @@
 
 <body>
     <!--加载动画-->
-    <div id="loading-box">
+    <div id="preload">
+            <li data-id="3" class="active">
+                <div id="preloader_3" >
+                </div>
+            </li>
+    </div>
+    
+    <!--<div id="loading-box">
         <div class="loading-left-bg"></div>
         <div class="loading-right-bg"></div>
         <div class="spinner-box">
@@ -66,7 +74,7 @@
                 <span id="loading-text">加载中</span>
             </div>
         </div>
-    </div>
+    </div>-->
     <section id="section" class="section">
         <!-- 背景图片 -->
         <div class="bg-all">

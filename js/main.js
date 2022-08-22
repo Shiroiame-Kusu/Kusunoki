@@ -27,7 +27,7 @@ iziToast.settings({
 window.addEventListener('load', function () {
 
     //载入动画
-    $('#loading-box').attr('class', 'loaded');
+    $('#preload').attr('class', 'loaded');
     $('#bg').css("cssText", "transform: scale(1);filter: blur(0px);transition: ease 1.5s;");
     $('.cover').css("cssText", "opacity: 1;transition: ease 1.5s;");
     $('#section').css("cssText", "transform: scale(1) !important;opacity: 1 !important;filter: blur(0px) !important");
@@ -365,7 +365,7 @@ color: rgb(0,255,255);
 var title1 = 'BWMC OOM PART'
 var title2 = 'Edited By Shiroiame Kusu'
 var content = `
-版 本 号：1.7.1-B1
+版 本 号：1.8.0-B1
 更新日期：Aug.22nd.2022
 更新内容：（小版本都是小修小补）
 1.7.1：修复天气api
