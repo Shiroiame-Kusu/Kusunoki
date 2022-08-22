@@ -117,8 +117,8 @@ $('#hitokoto').click(function () {
     }
 });
 
-const add_id = "wrknltonr0foslhs"; // app_id
-const app_secret = "Nlh1c0F6d0ZDU2pDR0J3YVBVbkhudz09"; // app_secret
+const add_id = "gjefqrrkxtliwpqp"; // app_id
+const app_secret = "VkRpVEI5MU1FTEJCOUM4SUlWSC8yUT09"; // app_secret
 const key = "f76f94fe1ff64b14933c34f305f50dde" // key
 function getWeather() {
     fetch("https://www.mxnzp.com/api/ip/self?app_id=" + add_id + "&app_secret=" + app_secret)
@@ -365,9 +365,10 @@ color: rgb(0,255,255);
 var title1 = 'BWMC OOM PART'
 var title2 = 'Edited By Shiroiame Kusu'
 var content = `
-版 本 号：1.7.0-B2
-更新日期：Aug.21th.2022
+版 本 号：1.7.1-B1
+更新日期：Aug.22nd.2022
 更新内容：（小版本都是小修小补）
+1.7.1：修复天气api
 1.7：增加PWA支持
 1.6: 同步上游项目更新
 
