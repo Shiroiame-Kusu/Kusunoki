@@ -21,8 +21,11 @@
         href="./cdn/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/mobile.css">
-    <!--<link rel="stylesheet" type="text/css" href="./css/loading.css">-->
-    <link rel="stylesheet" type="text/css" href="./css/preload.css">
+    <!--<link rel="stylesheet" type="text/css" href="./css/preload-origin.css">-->
+    <link rel="stylesheet" type="text/css" href="./css/preload-iro.css">
+    <!--<link rel="stylesheet" type="text/css" href="./css/preload-based.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="./css/preload-ring.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="./css/preload-recting.css">-->
     <link rel="stylesheet" type="text/css" href="./css/animation.css">
     <link rel="stylesheet" type="text/css" href="./css/cursor.css">
     <link rel="icon" href="./favicon.ico">
@@ -38,10 +41,8 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <!-- Aplayer -->
-    <link rel="stylesheet" href="./cdn/APlayer.min.css"
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="./cdn/APlayer.min.js" crossorigin="anonymous"
-        referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="./cdn/APlayer.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="./cdn/APlayer.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <!-- IE Out -->
     <script>
         if ( /*@cc_on!@*/ false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href =
@@ -52,14 +53,29 @@
 </head>
 
 <body>
-    <!--加载动画-->
+    <!--加载动画Preload-->
+
+    <!--Preload-recting-->
+    <!--<div class="flex-center">
+        <svg class="loading recting" width="40" height="40" viewbox="0 0 40 40">
+          <polygon points="0 0 0 40 40 40 40 0" class="polygon" />
+        </svg>
+    </div>-->
+
+    <!--Preload-Ring-->
+    <!--<div class="flex-center">
+        <div class="loading ring"></div>
+    </div>-->
+
+    <!--Preload-from-Sakurairo-->
     <div id="preload">
             <li data-id="3" class="active">
                 <div id="preloader_3" >
                 </div>
             </li>
     </div>
-    
+
+    <!--Preload-Original-->
     <!--<div id="loading-box">
         <div class="loading-left-bg"></div>
         <div class="loading-right-bg"></div>
