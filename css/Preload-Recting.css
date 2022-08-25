@@ -1,0 +1,17 @@
+.recting .polygon {
+  fill: none;
+  stroke-width: 8px;
+  stroke: black;
+  stroke-dasharray: 40;
+  stroke-dashoffset: 50%;
+  animation: recting 1.5s forwards infinite;
+}
+
+@keyframes recting {
+  to {
+    stroke-dashoffset: 250%;
+  }
+}
+.loaded{
+    display: none !important;
+}

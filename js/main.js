@@ -27,6 +27,9 @@ iziToast.settings({
 window.addEventListener('load', function () {
 
     //载入动画
+    //Preload Animation
+    $('#flex-center').attr('class', 'loaded');
+    //Sakurairo Preload Animation
     $('#preload').attr('class', 'loaded');
     $('#bg').css("cssText", "transform: scale(1);filter: blur(0px);transition: ease 1.5s;");
     $('.cover').css("cssText", "opacity: 1;transition: ease 1.5s;");
@@ -368,10 +371,11 @@ color: rgb(0,255,0);
 var title1 = 'BWMC OOM PART'
 var title2 = 'Edited By Shiroiame Kusu'
 var content = `
-版 本 号：1.8.0-B2
-更新日期：Aug.22nd.2022
+版 本 号：1.8.1-B1
+更新日期：Aug.25th.2022
 更新内容：（小版本都是小修小补）
-1.8.0：更改预加载画面
+1.8.1：增加两种预加载动画（共计四种）
+1.8：更改预加载动画
 （从Sakurairo搬过来的，瞳宝别打我wwwwwwwww）
 1.7.1：修复天气api
 1.7：增加PWA支持
@@ -385,6 +389,7 @@ Github:  https://github.com/Shiroiame-Kusu/bwmc.live
 var content0 = `
 Based on https://github.com/imsyy/home
 Preload Animation based on https://github.com/mirai-mamori/Sakurairo
+                           https://github.com/CiroLee/html_css_javascript
 `
 console.log(`%c${title1} %c${title2}
 %c${content} %c${content0}`, styleTitle1, styleTitle2, styleContent, styleContent0)
