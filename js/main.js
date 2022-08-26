@@ -356,33 +356,33 @@ console.clear();
 var styleTitle1 = `
 font-size: 20px;
 font-weight: 600;
-color: rgb(0,255,255);
+color: rgb(255,137,241);
 `
 var styleTitle2 = `
 font-size:12px;
-color: rgb(0,255,255);
+color: rgb(153,248,255);
 `
 var styleContent = `
-color: rgb(0,255,255);
+color: rgb(153,248,255);
 `
 var styleContent0 = `
 color: rgb(0,255,0);
 `
-var title1 = 'BWMC OOM PART'
-var title2 = 'Edited By Shiroiame Kusu'
+var title1 = 'Kusunoki-楠'
+var title2 = 'Powered by Shiroiame Kusu'
 var content = `
-版 本 号：1.8.1-B1
-更新日期：Aug.25th.2022
+版 本 号：2.0.0-B0
+更新日期：Aug.26th.2022
 更新内容：（小版本都是小修小补）
+2.0：项目正式更名为“Kusunoki-楠”
 1.8.1：增加两种预加载动画（共计四种）
 1.8：更改预加载动画
 （从Sakurairo搬过来的，瞳宝别打我wwwwwwwww）
 1.7.1：修复天气api
 1.7：增加PWA支持
-1.6: 同步上游项目更新
 
 主页:  https://bwmc.live
-Github:  https://github.com/Shiroiame-Kusu/bwmc.live
+Github:  https://github.com/Shiroiame-Kusu/Kusunoki
 邮箱：kusu@kusu.moe
 
 `
