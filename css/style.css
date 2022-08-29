@@ -744,6 +744,20 @@ i.iconfont.icon-z_shangpinheji {
     border-radius: 8px;
     transition: 0.3s;
 }
+.Download-button {
+    color: white !important;
+    background-color: transparent;
+    transition: 0.3s;
+
+}
+
+.Download-button:focus {
+    border-color: #ffffff26 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 8px;
+    transition: 0.3s;
+}
 
 .accordion-button:not(.collapsed) {
     background-color: #ffffff26;
