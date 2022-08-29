@@ -146,7 +146,14 @@ function getWeather() {
         })
         .catch(console.error);
 }
-
+function getRelease() {
+   fetch("https://api.bwmc.live/Kusunoki/Release/latest")
+   .then(response => response.json())
+   .then(data => {
+    let latest_link = data.zipball_url
+    window.location.href = latest_link
+   })
+}
 getWeather();
 
 //获取时间
@@ -371,7 +378,7 @@ color: rgb(0,255,0);
 var title1 = 'Kusunoki-楠'
 var title2 = 'Powered by Shiroiame Kusu'
 var content = `
-版 本 号：2.0.0-B0
+版 本 号：2.0.1-R1
 更新日期：Aug.26th.2022
 更新内容：（小版本都是小修小补）
 2.0：项目正式更名为“Kusunoki-楠”
