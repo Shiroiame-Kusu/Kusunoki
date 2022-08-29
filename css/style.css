@@ -729,6 +729,9 @@ i.iconfont.icon-z_shangpinheji {
 .accordion-item:first-of-type .accordion-button {
     border-radius: 8px;
 }
+.Download-button {
+    border-radius: 8px;
+}
 
 .accordion-button {
     color: white !important;
