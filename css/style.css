@@ -729,9 +729,6 @@ i.iconfont.icon-z_shangpinheji {
 .accordion-item:first-of-type .accordion-button {
     border-radius: 8px;
 }
-.Download-button {
-    border-radius: 8px;
-}
 
 .accordion-button {
     color: white !important;
@@ -746,29 +743,6 @@ i.iconfont.icon-z_shangpinheji {
     box-shadow: none !important;
     border-radius: 8px;
     transition: 0.3s;
-}
-.Download-button {
-    color: white !important;
-    background-color: transparent;
-    transition: 0.3s;
-
-}
-
-.Download-button:focus {
-    border-color: #ffffff26 !important;
-    outline: none !important;
-    box-shadow: none !important;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-.Download-button:not(.collapsed) {
-    background-color: #ffffff26;
-    font-weight: bold;
-    transition: 0.3s;
-}
-.Download-button::after {
-    border-radius: 8px;
-    background-image: none !important;
 }
 
 .accordion-button:not(.collapsed) {

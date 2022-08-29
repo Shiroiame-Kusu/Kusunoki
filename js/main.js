@@ -146,7 +146,16 @@ function getWeather() {
         })
         .catch(console.error);
 }
-
+function getRelease() {
+   fetch("https://api.bwmc.live/Kusunoki/Release/latest")
+   .then(response => response.json())
+   .then(data => {
+    let latest_link = data.zipball_url
+    a.appendChild(latest_link);
+    a.href = latest_link
+    document.body.appendChild(a);
+   })
+}
 getWeather();
 
 //获取时间
