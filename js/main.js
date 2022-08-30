@@ -4,7 +4,12 @@
 GitHub：https://github.com/imsyy/home
 版权所有，请勿删除
 */
-
+//声明版本
+var release = '2.0.2'
+var version = 'B1'
+var final_date = 'Aug.30th.2022'
+var final_version = release + '-' + version
+var final_version_img = '本站 v' + release + '_' + version
 //弹窗样式
 iziToast.settings({
     timeout: 10000,
@@ -150,11 +155,17 @@ function getRelease() {
    fetch("https://api.bwmc.live/Kusunoki/Release/latest")
    .then(response => response.json())
    .then(data => {
-    let release = data.tag_name
-    let latest_link = "https://github.com/Shiroiame-Kusu/Kusunoki/archive/refs/tags/" + release + ".zip"
+    let releases = data.tag_name
+    let latest_link = "https://github.com/Shiroiame-Kusu/Kusunoki/archive/refs/tags/" + releases + ".zip"
     window.location.href = latest_link
    })
 }
+function getCurrentVer(){
+    var current_version = document.getElementById("current-version")
+    var version_badge = "https://img.shields.io/badge/-" + final_version_img + "-0078D6?style=flat-square&logo=github"
+    current_version.innerHTML = current_version.innerHTML + "<a href='https://github.com/Shiroiame-Kusu' target='_blank'><img src='" + version_badge + "' /> </a>"
+}
+getCurrentVer();
 getWeather();
 
 //获取时间
@@ -376,11 +387,12 @@ color: rgb(153,248,255);
 var styleContent0 = `
 color: rgb(0,255,0);
 `
+
 var title1 = 'Kusunoki-楠'
 var title2 = 'Powered by Shiroiame Kusu'
 var content = `
-版 本 号：2.0.1-R2
-更新日期：Aug.29th.2022
+版 本 号：` + final_version + `
+更新日期：` + final_date + `
 更新内容：（小版本都是小修小补）
 2.0：项目正式更名为“Kusunoki-楠”
 1.8.1：增加两种预加载动画（共计四种）
