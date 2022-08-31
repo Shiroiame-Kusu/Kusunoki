@@ -1,7 +1,12 @@
 /*
-作者: imsyy
+原作者: imsyy
 主页：https://www.imsyy.top/
 GitHub：https://github.com/imsyy/home
+版权所有，请勿删除
+
+作者: Shiroiame Kusu
+主页：https://bwmc.live/
+GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 版权所有，请勿删除
 */
 //声明版本
@@ -9,7 +14,7 @@ var release = '2.0.2'
 var version = 'B2'
 var final_date = 'Aug.31st.2022'
 var final_version = release + '-' + version
-var final_version_img = '本站 v' + release + '_' + version
+var final_version_img = '当前 v' + release + '_' + version
 //弹窗样式
 iziToast.settings({
     timeout: 10000,
@@ -34,6 +39,8 @@ window.addEventListener('load', function () {
     //载入动画
     //Preload Animation
     $('#flex-center').attr('class', 'loaded');
+    //Original Preload Animation
+    $('#loading-box').attr('class', 'loaded');
     //Sakurairo Preload Animation
     $('#preload').attr('class', 'loaded');
     $('#bg').css("cssText", "transform: scale(1);filter: blur(0px);transition: ease 1.5s;");
