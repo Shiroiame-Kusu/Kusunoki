@@ -6,8 +6,8 @@ GitHub：https://github.com/imsyy/home
 */
 //声明版本
 var release = '2.0.2'
-var version = 'B1'
-var final_date = 'Aug.30th.2022'
+var version = 'B2'
+var final_date = 'Aug.31st.2022'
 var final_version = release + '-' + version
 var final_version_img = '本站 v' + release + '_' + version
 //弹窗样式
