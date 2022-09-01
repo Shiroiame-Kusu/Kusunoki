@@ -2,6 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+    left: 49%;
+    top: 49%;
 }
 .loaded{
     display: none !important;

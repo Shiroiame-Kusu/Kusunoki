@@ -19,7 +19,7 @@ var type = "playlist"; //song: 单曲; playlist: 歌单; album: 唱片
 var id = "7533625421"; //封面 ID / 单曲 ID / 歌单 ID
 
 $.ajax({
-    url: "https://music-api.bwmc.live/&type=" + type + "&id=" + id,
+    url: "https://music-api.bwmc.live/?type=" + type + "&id=" + id,
     type: "GET",
     dataType: "JSON",
     success: function (data) {
