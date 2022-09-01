@@ -1,20 +1,25 @@
 /*
 音乐信息
 
-感谢 @武恩赐 提供的 MetingAPI
-https://api.wuenci.com/meting/api/
+使用自建的 MetingAPI 覆盖原项目的MetingAPI
+目前仅支持网易云,未启用强制https/HSTS
+https://music-api.bwmc.live/
 
-作者: imsyy
+原作者: imsyy
 主页：https://www.imsyy.top/
 GitHub：https://github.com/imsyy/home
+
+作者: Shiroiame Kusu
+主页：https://bwmc.live/
+GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 版权所有，请勿删除
 */
-var server = "netease"; //netease: 网易云音乐; tencent: QQ音乐; kugou: 酷狗音乐; xiami: 虾米; kuwo: 酷我
+//var server = "netease"; //netease: 网易云音乐; tencent: QQ音乐; kugou: 酷狗音乐; xiami: 虾米; kuwo: 酷我
 var type = "playlist"; //song: 单曲; playlist: 歌单; album: 唱片
 var id = "7533625421"; //封面 ID / 单曲 ID / 歌单 ID
 
 $.ajax({
-    url: "https://api.wuenci.com/meting/api/?server=" + server + "&type=" + type + "&id=" + id,
+    url: "https://music-api.bwmc.live/?type=" + type + "&id=" + id,
     type: "GET",
     dataType: "JSON",
     success: function (data) {
@@ -23,7 +28,7 @@ $.ajax({
             order: 'random',
             preload: 'auto',
             listMaxHeight: '336px',
-            volume: '0.3',
+            volume: '0.5',
             mutex: true,
             lrcType: 3,
             audio: data,

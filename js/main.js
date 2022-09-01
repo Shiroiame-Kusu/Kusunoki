@@ -10,11 +10,86 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 版权所有，请勿删除
 */
 //声明版本
-var release = '2.0.2'
-var version = 'B2'
-var final_date = 'Aug.31st.2022'
+var release = '2.1.0'
+var version = 'B1'
+var final_date = 'Sept.1st.2022'
 var final_version = release + '-' + version
 var final_version_img = '当前 v' + release + '_' + version
+
+//社交链接区域显示文本
+var github_content = "去 Github 看看"
+var qq_content = "有什么事吗"
+var email_content = "来封 Email"
+var tg_content = "tg me?"
+var twitter_content = "Don't do this"
+var bilibili_content = "来 B 站看看 ~"
+var mouseout_content = "或许我......在这里"
+
+//移动端设置
+//更多页面切换
+var showmore = false;
+//移动端菜单栏切换
+var switchmenu = false;
+//移动端切换功能区
+var changemore = false;
+
+//预加载动画自定义，1为iro，2为origin，3为recting，4为ring
+var preload_animation = 1
+
+function preload_animation_choice() {
+    var preload_customize = document.getElementById("preload-customize")
+    if(preload_animation == 1) {
+        preload_customize.innerHTML = preload_customize.innerHTML + `
+<div id="preload">
+            <li data-id="3" class="active">
+                <div id="preloader_3" >
+                </div>
+            </li>
+    </div>
+        `
+    }
+    else if(preload_animation == 2){
+        preload_customize.innerHTML = preload_customize.innerHTML + `
+        <div id="loading-box">
+        <div class="loading-left-bg"></div>
+        <div class="loading-right-bg"></div>
+        <div class="spinner-box">
+            <div class="loader">
+                <div class="inner one"></div>
+                <div class="inner two"></div>
+                <div class="inner three"></div>
+            </div>
+            <div class="loading-word">
+                <p class="loading-title">BWMC,记忆之外</p>
+                <span id="loading-text">加载中</span>
+            </div>
+        </div>
+    </div>
+        `
+    }
+    else if(preload_animation == 3){
+        preload_customize.innerHTML = preload_customize.innerHTML + `
+        <div class="flex-center">
+        <svg class="loading recting" width="40" height="40" viewbox="0 0 40 40">
+          <polygon points="0 0 0 40 40 40 40 0" class="polygon" />
+        </svg>
+        </div>
+        `
+    }
+    else if(preload_animation == 4){
+        preload_customize.innerHTML = preload_customize.innerHTML + `
+        <div class="flex-center">
+        <div class="loading ring"></div>
+        </div>
+        `
+    }
+    else{
+        console.clear();
+        console.error(`你在写啥？获取重新检查一遍预加载动画有没有设置好
+    就是第37行的 preload_animation`)
+    }
+}
+preload_animation_choice();
 //弹窗样式
 iziToast.settings({
     timeout: 10000,
@@ -38,7 +113,8 @@ window.addEventListener('load', function () {
 
     //载入动画
     //Preload Animation
-    $('#flex-center').attr('class', 'loaded');
+    $('.preload-customize').attr('class', 'loaded');
+    $('.flex-center').attr('class', 'loaded');
     //Original Preload Animation
     $('#loading-box').attr('class', 'loaded');
     //Sakurairo Preload Animation
@@ -63,8 +139,6 @@ window.addEventListener('load', function () {
     document.body.appendChild(element);
 
     //中文字体缓加载-此处写入字体源文件
-    //先行加载简体中文子集，后续补全字集
-    //由于压缩过后的中文字体仍旧过大，可转移至对象存储或 CDN 加载
     const font = new FontFace(
         "MiSans",
         "url(" + "https://api.bwmc.live/fonts/MiSans-Regular.woff2" + ")"
@@ -225,42 +299,42 @@ $("#social").mouseover(function () {
     });
 });
 
+//社交链接区域显示文本
 $("#github").mouseover(function () {
-    $("#link-text").html("去 Github 看看");
+    $("#link-text").html(github_content);
 }).mouseout(function () {
-    $("#link-text").html("或许我......在这里");
+    $("#link-text").html(mouseout_content);
 });
 $("#qq").mouseover(function () {
-    $("#link-text").html("有什么事吗");
+    $("#link-text").html(qq_content);
 }).mouseout(function () {
-    $("#link-text").html("或许我......在这里");
+    $("#link-text").html(mouseout_content);
 });
 $("#email").mouseover(function () {
-    $("#link-text").html("来封 Email");
+    $("#link-text").html(email_content);
 }).mouseout(function () {
-    $("#link-text").html("或许我......在这里");
+    $("#link-text").html(mouseout_content);
 });
 $("#telegram").mouseover(function () {
-    $("#link-text").html("tg me?");
+    $("#link-text").html(tg_content);
 }).mouseout(function () {
-    $("#link-text").html("或许我......在这里");
+    $("#link-text").html(mouseout_content);
 });
 $("#twitter").mouseover(function () {
-    $("#link-text").html("Don't do this");
+    $("#link-text").html(twitter_content);
 }).mouseout(function () {
-    $("#link-text").html("或许我......在这里");
+    $("#link-text").html(mouseout_content);
 });
 $("#bilibili").mouseover(function () {
-    $("#link-text").html("来 B 站看看 ~");
+    $("#link-text").html(bilibili_content);
 }).mouseout(function () {
-    $("#link-text").html("或许我......在这里");
+    $("#link-text").html(mouseout_content);
 });
 
 //更多页面切换
-var shoemore = false;
 $('#switchmore').on('click', function () {
-    shoemore = !shoemore;
-    if (shoemore && $(document).width() >= 990) {
+    showmore = !showmore;
+    if (showmore && $(document).width() >= 990) {
         $('#container').attr('class', 'container mores');
         $("#change").html("Oops&nbsp;!");
         $("#change1").html("哎呀，这都被你发现了（ 再点击一次可关闭 ）");
@@ -277,7 +351,6 @@ $('#close').on('click', function () {
 });
 
 //移动端菜单栏切换
-var switchmenu = false;
 $('#switchmenu').on('click', function () {
     switchmenu = !switchmenu;
     if (switchmenu) {
@@ -327,7 +400,6 @@ window.addEventListener('load', function () {
 })
 
 //移动端切换功能区
-var changemore = false;
 $('#changemore').on('click', function () {
     changemore = !changemore;
     if (changemore) {
@@ -378,7 +450,7 @@ for (var day of days) {
 }
 
 //控制台输出
-console.clear();
+
 var styleTitle1 = `
 font-size: 20px;
 font-weight: 600;
@@ -401,6 +473,7 @@ var content = `
 版 本 号：` + final_version + `
 更新日期：` + final_date + `
 更新内容：（小版本都是小修小补）
+2.1：提供更好的自定义设置
 2.0：项目正式更名为“Kusunoki-楠”
 1.8.1：增加两种预加载动画（共计四种）
 1.8：更改预加载动画
