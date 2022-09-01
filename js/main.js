@@ -10,9 +10,9 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 版权所有，请勿删除
 */
 //声明版本
-var release = '2.0.2'
-var version = 'B2'
-var final_date = 'Aug.31st.2022'
+var release = '2.0.3'
+var version = 'Alpha-1'
+var final_date = 'Sept.1st.2022'
 var final_version = release + '-' + version
 var final_version_img = '当前 v' + release + '_' + version
 //弹窗样式
