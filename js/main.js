@@ -11,7 +11,7 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 */
 //声明版本
 var release = '2.1.0'
-var version = 'B1'
+var version = 'B2'
 var final_date = 'Sept.1st.2022'
 var final_version = release + '-' + version
 var final_version_img = '当前 v' + release + '_' + version
