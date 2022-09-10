@@ -48,6 +48,10 @@ var tg_link = "https://t.me/Shiroiame_Kusu"
 var twitter_link = "https://twitter.com/Shiroiame_Kusu"
 var bilibili_link = "https://space.bilibili.com/358682633"
 
+//设置头像旁文本，建议是短域名这样用，炸了不负责
+var domain_name1 = 'bwmc'
+var domain_name2 = '.live'
+
 //移动端设置
 //更多页面切换
 var showmore = false;
@@ -126,6 +130,10 @@ function email_click(){window.link.href = email_link}
 function tg_click(){window.open(tg_link,'_blank');}
 function twitter_click(){window.open(twitter_link,'_blank');}
 function bilibili_click(){window.open(bilibili_link,'_blank');}
+
+//应用头像旁文本
+document.getElementById('domain-1').innerHTML = document.getElementById('domain-1').innerHTML + domain_name1
+document.getElementById('domain-2').innerHTML = document.getElementById('domain-2').innerHTML + domain_name2
 
 //弹窗样式
 iziToast.settings({
@@ -337,6 +345,7 @@ $("#social").mouseover(function () {
 });
 
 //社交链接区域显示文本
+document.getElementById("link-text").innerHTML = document.getElementById("link-text").innerHTML + mouseout_content
 $("#github").mouseover(function () {
     $("#link-text").html(github_content);
 }).mouseout(function () {
@@ -368,6 +377,8 @@ $("#bilibili").mouseover(function () {
     $("#link-text").html(mouseout_content);
 });
 
+document.getElementById('change').innerHTML = document.getElementById('change').innerHTML + change_content1
+document.getElementById('change1').innerHTML = document.getElementById('change1').innerHTML + change_content2
 //更多页面切换
 $('#switchmore').on('click', function () {
     showmore = !showmore;
