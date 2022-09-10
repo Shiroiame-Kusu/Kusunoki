@@ -11,7 +11,8 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 */
 //声明版本
 var release = '2.1.1'
-var version = 'B2'
+var version = 'RC1'
+//A表示不稳定内测版本，B表示可用的公测版本但不保证稳定性，RC表示接近正式版的候选版本，R即为正式版
 var final_date = 'Sept.1st.2022'
 var final_version = release + '-' + version
 var final_version_img = '当前 v' + release + '_' + version
@@ -32,6 +33,12 @@ var showmore = false;
 var switchmenu = false;
 //移动端切换功能区
 var changemore = false;
+//更多页面切换-内容
+var change_content_click1 = "Oops&nbsp;!"
+var change_content_click2 = "哎呀，这都被你发现了（ 再点击一次可关闭 ）"
+var change_content1 = "Where?&nbsp;No&nbsp;Where!"
+var change_content2 = "The OOM Part Of BWMC, For Me"
+//5个button的链接自定义
 
 //预加载动画自定义，1为iro，2为origin，3为recting，4为ring
 var preload_animation = 1
@@ -336,12 +343,12 @@ $('#switchmore').on('click', function () {
     showmore = !showmore;
     if (showmore && $(document).width() >= 990) {
         $('#container').attr('class', 'container mores');
-        $("#change").html("Oops&nbsp;!");
-        $("#change1").html("哎呀，这都被你发现了（ 再点击一次可关闭 ）");
+        $("#change").html(change_content_click1);
+        $("#change1").html(change_content_click2);
     } else {
         $('#container').attr('class', 'container');
-        $("#change").html("Where?&nbsp;No&nbsp;Where!");
-        $("#change1").html("The OOM Part Of BWMC, For Me");
+        $("#change").html(change_content1);
+        $("#change1").html(change_content2);
     }
 });
 
@@ -388,8 +395,8 @@ window.addEventListener('load', function () {
         if (window.innerWidth <= 990) {
             //移动端隐藏更多页面
             $('#container').attr('class', 'container');
-            $("#change").html("Hello&nbsp;World&nbsp;!");
-            $("#change1").html("The OOM Part Of BWMC, For Me");
+            $("#change").html(change_content1);
+            $("#change1").html(change_content2);
 
             //移动端隐藏弹窗页面
             $('#box').css("display", "none");
