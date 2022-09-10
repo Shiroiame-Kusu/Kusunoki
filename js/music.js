@@ -19,7 +19,6 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 var server = "netease" //netease: 网易云音乐; tencent: QQ音乐;
 var type = "playlist" //song: 单曲; playlist: 歌单; album: 唱片
 var id = "7533625421" //封面 ID / 单曲 ID / 歌单 ID
-
 $.ajax({
     url: "https://music-api.bwmc.live/?server=" + server + "&type=" + type + "&id=" + id,
     type: "GET",
