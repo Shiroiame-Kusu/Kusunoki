@@ -113,7 +113,7 @@ function preload_animation_choice() {
     else{
         console.clear();
         console.error(`你在写啥？重新检查一遍预加载动画有没有设置好
-    就是第60行的 preload_animation`)
+    就是第65行的 preload_animation`)
     }
 }
 preload_animation_choice();

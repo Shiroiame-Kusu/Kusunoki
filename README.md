@@ -13,7 +13,7 @@ Based On https://github.com/imsyy/home
 - [x] 时光进度条
 - [x] 音乐播放器
 - [x] 移动端适配
-- [ ] 完全化自定义
+- [ ] 完全化自定义(预计会在Ver2.2完成)
 ### 插件
 * [Bootstrap](https://getbootstrap.com/)
 * [iziToast](https://izitoast.marcelodolza.com/)
