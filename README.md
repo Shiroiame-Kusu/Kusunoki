@@ -13,7 +13,7 @@ Based On https://github.com/imsyy/home
 - [x] 时光进度条
 - [x] 音乐播放器
 - [x] 移动端适配
-- [ ] 完全化自定义(预计会在Ver2.2完成)
+- [x] 完全化自定义
 ### 插件
 * [Bootstrap](https://getbootstrap.com/)
 * [iziToast](https://izitoast.marcelodolza.com/)
@@ -29,7 +29,7 @@ Based On https://github.com/imsyy/home
 * [Hitokoto 一言](https://hitokoto.cn/)
 * [BWMC Random Image Api](https://api.bwmc.live/)
 ## 更新日志
-### Ver 2.1: 提供更多/更方便的自定义选项
+### Ver 2.1/2.2: 提供更多/更方便的自定义选项
 **您可以在main.js中修改你需要修改的变量内容（不要乱改变量名）**  
 **且不用去更改index.html文件**
 ### Ver 2.0：项目正式更名为“Kusunoki-楠”  
