@@ -1,7 +1,7 @@
 ## Kusunoki-楠
 基于 https://github.com/imsyy/home  
 Based On https://github.com/imsyy/home  
-![BWMC&nbsp;OOM&nbsp;Part](https://github.com/Shiroiame-Kusu/Kusunoki/blob/main/Preview.png)  
+![BWMC&nbsp;OOM&nbsp;Part](https://github.com/Shiroiame-Kusu/Kusunoki/raw/main/Preview.png)  
 ### 示例界面
 [BWMC&nbsp;OOM&nbsp;Part](https://bwmc.live)  
 ### 功能
@@ -13,6 +13,7 @@ Based On https://github.com/imsyy/home
 - [x] 时光进度条
 - [x] 音乐播放器
 - [x] 移动端适配
+- [ ] 完全化自定义(预计会在Ver2.2完成)
 ### 插件
 * [Bootstrap](https://getbootstrap.com/)
 * [iziToast](https://izitoast.marcelodolza.com/)
@@ -28,6 +29,9 @@ Based On https://github.com/imsyy/home
 * [Hitokoto 一言](https://hitokoto.cn/)
 * [BWMC Random Image Api](https://api.bwmc.live/)
 ## 更新日志
+### Ver 2.1: 提供更多/更方便的自定义选项
+**您可以在main.js中修改你需要修改的变量内容（不要乱改变量名）**  
+**且不用去更改index.html文件**
 ### Ver 2.0：项目正式更名为“Kusunoki-楠”  
 
 ### 1.8.1：增加两种预加载动画（共计四种）  
@@ -41,5 +45,4 @@ Based On https://github.com/imsyy/home
 
 ### 1.0-1.6：我忘了更新了什么了  
   
-[![GitHub release](https://img.shields.io/github/v/release/Shiroiame-Kusu/Kusunoki)](https://github.com/Shiroiame-Kusu/Kusunoki/releases/latest)[![GitHub Release Date](https://img.shields.io/github/release-date/Shiroiame-Kusu/Kusunoki)](https://github.com/Shiroiame-Kusu/Kusunoki/releases)![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Shiroiame-Kusu/Kusunoki)
-<a title="SSL" target="_blank" href="https://myssl.com/seal/detail?domain=bwmc.live"><img src="https://img.shields.io/badge/MySSL-安全认证-brightgreen"></a>
+[![GitHub release](https://img.shields.io/github/v/release/Shiroiame-Kusu/Kusunoki)](https://github.com/Shiroiame-Kusu/Kusunoki/releases/latest) [![GitHub Release Date](https://img.shields.io/github/release-date/Shiroiame-Kusu/Kusunoki)](https://github.com/Shiroiame-Kusu/Kusunoki/releases) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Shiroiame-Kusu/Kusunoki) <a title="SSL" target="_blank" href="https://myssl.com/seal/detail?domain=bwmc.live"><img src="https://img.shields.io/badge/MySSL-安全认证-brightgreen"></a>

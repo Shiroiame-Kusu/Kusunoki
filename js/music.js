@@ -2,7 +2,7 @@
 音乐信息
 
 使用自建的 MetingAPI 覆盖原项目的MetingAPI
-目前仅支持网易云,未启用强制https/HSTS
+目前仅支持网易云与QQ,未启用强制https/HSTS
 https://music-api.bwmc.live/
 
 原作者: imsyy
@@ -14,12 +14,13 @@ GitHub：https://github.com/imsyy/home
 GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 版权所有，请勿删除
 */
-//var server = "netease"; //netease: 网易云音乐; tencent: QQ音乐; kugou: 酷狗音乐; xiami: 虾米; kuwo: 酷我
-var type = "playlist"; //song: 单曲; playlist: 歌单; album: 唱片
-var id = "7533625421"; //封面 ID / 单曲 ID / 歌单 ID
 
+//以下的请去settings.json的最后几行修改，此处只是写了注释供你参考settings.json里该怎么修改
+var server = "netease" //netease: 网易云音乐; tencent: QQ音乐;
+var type = "playlist" //song: 单曲; playlist: 歌单; album: 唱片
+var id = "7533625421" //封面 ID / 单曲 ID / 歌单 ID
 $.ajax({
-    url: "https://music-api.bwmc.live/?type=" + type + "&id=" + id,
+    url: "https://music-api.bwmc.live/?server=" + server + "&type=" + type + "&id=" + id,
     type: "GET",
     dataType: "JSON",
     success: function (data) {
@@ -54,13 +55,6 @@ $.ajax({
                 $('.power').css("cssText", "display:none");
                 $('#lrc').css("cssText", "display:block !important");
             };
-            // Notification.requestPermission().then(res => {
-            //     console.log(res)
-            // });
-            // new Notification('音乐通知', {
-            //     body: '正在播放：' + music,
-            //     tag: 1
-            // });
         });
 
         ap.on('pause', function () {
