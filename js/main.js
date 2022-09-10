@@ -11,8 +11,9 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 */
 //声明版本
 var release = '2.2.0'
-var version = 'B2'
+var version = 'B3'
 //A表示不稳定内测版本，B表示可用的公测版本但不保证稳定性，RC表示接近正式版的候选版本，R即为正式版
+//建议是不要随意更改
 var final_date = 'Sept.10th.2022'
 var final_version = release + '-' + version
 var final_version_img = '当前 v' + release + '_' + version
@@ -190,7 +191,10 @@ window.addEventListener('load', function () {
         //"url(" + "./font/MiSans-Regular.woff2" + ")"
     );
     document.fonts.add(font);
-
+    
+    if (Boolean(window.navigator.userAgent.match(/AppWebKit.*Mobile.*/))) {
+        $('#g-pointer-2').css("display", "none");
+    }
 }, false)
 
 setTimeout(function () {
@@ -526,12 +530,11 @@ var content = `
 版 本 号：` + final_version + `
 更新日期：` + final_date + `
 更新内容：（小版本都是小修小补）
-2.1：提供更好的自定义设置
+2.2：提供更好的自定义设置
 2.0：项目正式更名为“Kusunoki-楠”
 1.8.1：增加两种预加载动画（共计四种）
 1.8：更改预加载动画
 （从Sakurairo搬过来的，瞳宝别打我wwwwwwwww）
-1.7.1：修复天气api
 1.7：增加PWA支持
 
 主页:  https://bwmc.live
