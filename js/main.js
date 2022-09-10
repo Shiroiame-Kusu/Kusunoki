@@ -18,41 +18,77 @@ var final_date = 'Sept.10th.2022'
 var final_version = release + '-' + version
 var final_version_img = '当前 v' + release + '_' + version
 
-//社交链接区域显示文本
-var github_content = "去 Github 看看"
-var qq_content = "有什么事吗"
-var email_content = "来封 Email"
-var tg_content = "tg me?"
-var twitter_content = "Don't do this"
-var bilibili_content = "来 B 站看看 ~"
-var mouseout_content = "或许我......在这里"
 
-//更多页面切换-内容
-var change_content_click1 = "Oops&nbsp;!"
-var change_content_click2 = "哎呀，这都被你发现了（ 再点击一次可关闭 ）"
-var change_content1 = "Where?&nbsp;No&nbsp;Where!"
-var change_content2 = "The OOM Part Of BWMC, For Me"
-
-//5个button的链接自定义
-//上3
-var button_link_1 = "https://cmu.bwmc.live/"
-var button_link_2 = "https://support.kusu.moe/"
-var button_link_3 = "https://amenai.ml/"
-//下2
-var button_link_4 = "https://kusu.moe"
-var button_link_5 = "https://cmu.bwmc.live/friendly-links"
-//社交链接自定义
-var github_link = "https://github.com/Shiroiame-Kusu"
-var qq_link = "http://wpa.qq.com/msgrd?v=3&uin=2024986092&site=qq&menu=yes"
-var email_link = "mailto:kusu@kusu.moe"
-var tg_link = "https://t.me/Shiroiame_Kusu"
-var twitter_link = "https://twitter.com/Shiroiame_Kusu"
-var bilibili_link = "https://space.bilibili.com/358682633"
-
-//设置头像旁文本，建议是短域名这样用，炸了不负责
-var domain_name1 = 'bwmc'
-var domain_name2 = '.live'
-
+fetch("./settings.json")
+.then(response => response.json())
+.then(data => {
+    //请去settings.json进行自定义设置，不要不小心把逗号和冒号去掉了
+        github_content = data.github_content
+        qq_content = data.qq_content
+        email_content = data.email_content
+        tg_content = data.tg_content
+        twitter_content = data.twitter_content
+        bilibili_content = data.bilibili_content
+        mouseout_content = data.mouseout_content
+    //更多页面切换-内容
+        change_content_click1 = data.change_content_click1
+        change_content_click2 = data.change_content_click2
+        change_content1 = data.change_content1
+        change_content2 = data.change_content2
+    //5个button的链接自定义
+    //上3
+        button_link_1 = data.button_link_1
+        button_link_2 = data.button_link_2
+        button_link_3 = data.button_link_3
+    //下2
+        button_link_4 = data.button_link_4
+        button_link_5 = data.button_link_5
+    //社交链接自定义
+        github_link = data.github_link
+        qq_link = data.qq_link
+        email_link = data.email_link
+        tg_link = data.tg_link
+        twitter_link = data.twitter_link
+        bilibili_link = data.bilibili_link
+    //设置头像旁文本，建议是短域名这样用，炸了不负责
+        domain_name1 = data.domain_name1
+        domain_name2 = data.domain_name2
+        //骚操作
+        $('#change').html(change_content1)
+        $('#change1').html(change_content2)
+        //应用头像旁文本
+        $('#domain-1').html(domain_name1)
+        $('#domain-2').html(domain_name2)
+        //社交链接区域显示文本
+        $("#link-text").html(mouseout_content)
+})
+//以下是迷惑行为，这样写的原因是我不知道为什么有些地方获取不到全局变量想的玄学方法，也懒得debug
+//你可以自己删掉不受影响的部分
+/*var github_content = github_content
+var qq_content = qq_content
+var email_content = email_content
+var tg_content = tg_content
+var twitter_content = twitter_content
+var bilibili_content = bilibili_content
+var mouseout_content = mouseout_content
+var change_content_click1 = change_content_click1
+var change_content_click2 = change_content_click2
+var change_content1 = change_content1
+var change_content2 = change_content2
+var button_link_1 = button_link_1
+var button_link_2 = button_link_2
+var button_link_3 = button_link_3
+var button_link_4 = button_link_4
+var button_link_5 = button_link_5
+var github_link = github_link
+var qq_link = qq_link
+var email_link = email_link
+var tg_link = tg_link
+var twitter_link = twitter_link
+var bilibili_link = bilibili_link
+var domain_name1 = domain_name1
+var domain_name2 = domain_name2
+*/
 //移动端设置
 //更多页面切换
 var showmore = false;
@@ -60,7 +96,6 @@ var showmore = false;
 var switchmenu = false;
 //移动端切换功能区
 var changemore = false;
-
 //预加载动画自定义，1为iro，2为origin，3为recting，4为ring
 var preload_animation = 1
 function preload_animation_choice() {
@@ -132,9 +167,7 @@ function tg_click(){window.open(tg_link,'_blank');}
 function twitter_click(){window.open(twitter_link,'_blank');}
 function bilibili_click(){window.open(bilibili_link,'_blank');}
 
-//应用头像旁文本
-document.getElementById('domain-1').innerHTML = document.getElementById('domain-1').innerHTML + domain_name1
-document.getElementById('domain-2').innerHTML = document.getElementById('domain-2').innerHTML + domain_name2
+
 
 //弹窗样式
 iziToast.settings({
@@ -290,7 +323,7 @@ function getRelease() {
     window.location.href = latest_link
    })
 }
-function getCurrentVer(){
+function getCurrentVer() {
     var current_version = document.getElementById("current-version")
     var version_badge = "https://img.shields.io/badge/-" + final_version_img + "-0078D6?style=flat-square&logo=github"
     current_version.innerHTML = current_version.innerHTML + "<a href='https://github.com/Shiroiame-Kusu' target='_blank'><img src='" + version_badge + "' /> </a>"
@@ -348,8 +381,6 @@ $("#social").mouseover(function () {
     });
 });
 
-//社交链接区域显示文本
-document.getElementById("link-text").innerHTML = document.getElementById("link-text").innerHTML + mouseout_content
 $("#github").mouseover(function () {
     $("#link-text").html(github_content);
 }).mouseout(function () {
@@ -381,8 +412,6 @@ $("#bilibili").mouseover(function () {
     $("#link-text").html(mouseout_content);
 });
 
-document.getElementById('change').innerHTML = document.getElementById('change').innerHTML + change_content1
-document.getElementById('change1').innerHTML = document.getElementById('change1').innerHTML + change_content2
 //更多页面切换
 $('#switchmore').on('click', function () {
     showmore = !showmore;
