@@ -10,10 +10,11 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 版权所有，请勿删除
 */
 //声明版本
-var release = '2.1.1'
-var version = 'RC1'
+var release = '2.2.0'
+var version = 'B3'
 //A表示不稳定内测版本，B表示可用的公测版本但不保证稳定性，RC表示接近正式版的候选版本，R即为正式版
-var final_date = 'Sept.1st.2022'
+//建议是不要随意更改
+var final_date = 'Sept.10th.2022'
 var final_version = release + '-' + version
 var final_version_img = '当前 v' + release + '_' + version
 
@@ -26,6 +27,32 @@ var twitter_content = "Don't do this"
 var bilibili_content = "来 B 站看看 ~"
 var mouseout_content = "或许我......在这里"
 
+//更多页面切换-内容
+var change_content_click1 = "Oops&nbsp;!"
+var change_content_click2 = "哎呀，这都被你发现了（ 再点击一次可关闭 ）"
+var change_content1 = "Where?&nbsp;No&nbsp;Where!"
+var change_content2 = "The OOM Part Of BWMC, For Me"
+
+//5个button的链接自定义
+//上3
+var button_link_1 = "https://cmu.bwmc.live/"
+var button_link_2 = "https://support.kusu.moe/"
+var button_link_3 = "https://amenai.ml/"
+//下2
+var button_link_4 = "https://kusu.moe"
+var button_link_5 = "https://cmu.bwmc.live/friendly-links"
+//社交链接自定义
+var github_link = "https://github.com/Shiroiame-Kusu"
+var qq_link = "http://wpa.qq.com/msgrd?v=3&uin=2024986092&site=qq&menu=yes"
+var email_link = "mailto:kusu@kusu.moe"
+var tg_link = "https://t.me/Shiroiame_Kusu"
+var twitter_link = "https://twitter.com/Shiroiame_Kusu"
+var bilibili_link = "https://space.bilibili.com/358682633"
+
+//设置头像旁文本，建议是短域名这样用，炸了不负责
+var domain_name1 = 'bwmc'
+var domain_name2 = '.live'
+
 //移动端设置
 //更多页面切换
 var showmore = false;
@@ -33,16 +60,9 @@ var showmore = false;
 var switchmenu = false;
 //移动端切换功能区
 var changemore = false;
-//更多页面切换-内容
-var change_content_click1 = "Oops&nbsp;!"
-var change_content_click2 = "哎呀，这都被你发现了（ 再点击一次可关闭 ）"
-var change_content1 = "Where?&nbsp;No&nbsp;Where!"
-var change_content2 = "The OOM Part Of BWMC, For Me"
-//5个button的链接自定义
 
 //预加载动画自定义，1为iro，2为origin，3为recting，4为ring
 var preload_animation = 1
-
 function preload_animation_choice() {
     var preload_customize = document.getElementById("preload-customize")
     if(preload_animation == 1) {
@@ -93,10 +113,29 @@ function preload_animation_choice() {
     else{
         console.clear();
         console.error(`你在写啥？重新检查一遍预加载动画有没有设置好
-    就是第37行的 preload_animation`)
+    就是第65行的 preload_animation`)
     }
 }
 preload_animation_choice();
+//应用上面设置的链接到元素
+function button_click1(){window.open(button_link_1,'_blank');}
+function button_click2(){window.open(button_link_2,'_blank');}
+function button_click3(){window.open(button_link_3,'_blank');}
+function button_click4(){window.open(button_link_4,'_blank');}
+function button_click5(){window.open(button_link_5,'_blank');}
+
+//社交图标链接应用
+function github_click(){window.open(github_link,'_blank');}
+function qq_click(){window.open(qq_link,'_blank');}
+function email_click(){window.link.href = email_link}
+function tg_click(){window.open(tg_link,'_blank');}
+function twitter_click(){window.open(twitter_link,'_blank');}
+function bilibili_click(){window.open(bilibili_link,'_blank');}
+
+//应用头像旁文本
+document.getElementById('domain-1').innerHTML = document.getElementById('domain-1').innerHTML + domain_name1
+document.getElementById('domain-2').innerHTML = document.getElementById('domain-2').innerHTML + domain_name2
+
 //弹窗样式
 iziToast.settings({
     timeout: 10000,
@@ -152,7 +191,10 @@ window.addEventListener('load', function () {
         //"url(" + "./font/MiSans-Regular.woff2" + ")"
     );
     document.fonts.add(font);
-
+    
+    if (Boolean(window.navigator.userAgent.match(/AppWebKit.*Mobile.*/))) {
+        $('#g-pointer-2').css("display", "none");
+    }
 }, false)
 
 setTimeout(function () {
@@ -307,6 +349,7 @@ $("#social").mouseover(function () {
 });
 
 //社交链接区域显示文本
+document.getElementById("link-text").innerHTML = document.getElementById("link-text").innerHTML + mouseout_content
 $("#github").mouseover(function () {
     $("#link-text").html(github_content);
 }).mouseout(function () {
@@ -338,6 +381,8 @@ $("#bilibili").mouseover(function () {
     $("#link-text").html(mouseout_content);
 });
 
+document.getElementById('change').innerHTML = document.getElementById('change').innerHTML + change_content1
+document.getElementById('change1').innerHTML = document.getElementById('change1').innerHTML + change_content2
 //更多页面切换
 $('#switchmore').on('click', function () {
     showmore = !showmore;
@@ -485,12 +530,11 @@ var content = `
 版 本 号：` + final_version + `
 更新日期：` + final_date + `
 更新内容：（小版本都是小修小补）
-2.1：提供更好的自定义设置
+2.2：提供更好的自定义设置
 2.0：项目正式更名为“Kusunoki-楠”
 1.8.1：增加两种预加载动画（共计四种）
 1.8：更改预加载动画
 （从Sakurairo搬过来的，瞳宝别打我wwwwwwwww）
-1.7.1：修复天气api
 1.7：增加PWA支持
 
 主页:  https://bwmc.live
