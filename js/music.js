@@ -16,9 +16,11 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 */
 
 //以下的请去settings.json的最后几行修改，此处只是写了注释供你参考settings.json里该怎么修改
+//二注：你还是就在这里改吧，json指定有点问题
 var server = "netease" //netease: 网易云音乐; tencent: QQ音乐;
 var type = "playlist" //song: 单曲; playlist: 歌单; album: 唱片
 var id = "7533625421" //封面 ID / 单曲 ID / 歌单 ID
+
 $.ajax({
     url: "https://music-api.bwmc.live/?server=" + server + "&type=" + type + "&id=" + id,
     type: "GET",
@@ -29,7 +31,7 @@ $.ajax({
             order: 'random',
             preload: 'auto',
             listMaxHeight: '336px',
-            volume: '0.5',
+            volume: '0.3',
             mutex: true,
             lrcType: 3,
             audio: data,

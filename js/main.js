@@ -11,7 +11,7 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 */
 //声明版本
 var release = '2.3.0'
-var version = 'B1'
+var version = 'B2'
 //A表示不稳定内测版本，B表示可用的公测版本但不保证稳定性，RC表示接近正式版的候选版本，R即为正式版
 //建议是不要随意更改
 var final_date = 'Sept.10th.2022'
@@ -20,11 +20,13 @@ var final_version_img = '当前 v' + release + '_' + version
 //预加载动画自定义，1为iro，2为origin，3为recting，4为ring
 var preload_animation = 1
 
-function GetSettings(){
-fetch("./settings.json")
-.then(response => response.json())
-.then(data => {
+$(function (){
+    var url = './settings.json'
+    $.getJSON(
+        url,
+        function (data) {
         //请去settings.json进行自定义设置，不要不小心把逗号和冒号去掉了
+        //window.preload_animation = data.preload_animation
         github_content = data.github_content
         qq_content = data.qq_content
         email_content = data.email_content
@@ -53,22 +55,33 @@ fetch("./settings.json")
         twitter_link = data.twitter_link
         bilibili_link = data.bilibili_link
         //设置头像旁文本，建议是短域名这样用，炸了不负责
-        domain_name1 = data.domain_name1
-        domain_name2 = data.domain_name2
+        logo_text1 = data.logo_text1
+        logo_text2 = data.logo_text2
         //标题
         title = data.title
-        $('title').html('BWMC OOM Part')
+        $('title').html(title)
+        //版权所有
+        copyright = data.copyright
+        $("#power").html(copyright)
+        $("meta[name='description']").attr('content', data.description);
+        $("meta[name='keywords']").attr('content', data.keywords);
+        $("meta[name='author']").attr('content', data.author);
+        $('#logo-img').attr('src', data.logo_img)
         //骚操作
         $('#change').html(change_content1)
         $('#change1').html(change_content2)
         //应用头像旁文本
-        $('#domain-1').html(domain_name1)
-        $('#domain-2').html(domain_name2)
+        $('#domain-1').html(logo_text1)
+        $('#domain-2').html(logo_text2)
         //社交链接区域显示文本
         $("#link-text").html(mouseout_content)
-})}
-GetSettings();
-var preload_animation = window.preload_animation
+        }
+    )
+})
+
+
+        
+
 //移动端设置
 //更多页面切换
 var showmore = false;
@@ -79,6 +92,7 @@ var changemore = false;
 
 function preload_animation_choice() {
     var preload_customize = document.getElementById("preload-customize")
+    var preload_animation = window.preload_animation
     if(preload_animation == 1) {
         preload_customize.innerHTML = preload_customize.innerHTML + `
 <div id="preload">
@@ -127,7 +141,7 @@ function preload_animation_choice() {
     else{
         //console.clear();
         console.error(`你在写啥？重新检查一遍预加载动画有没有设置好
-    就是第65行的 preload_animation`)
+    就是第21行的 preload_animation`)
     }
 }
 preload_animation_choice();
