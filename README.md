@@ -29,7 +29,9 @@ Based On https://github.com/imsyy/home
 * [BWMC Random Image Api](https://api.bwmc.live/)
 * [MetingAPI By BWMC Community](https://music-api.bwmc.live)
 ## 更新日志
-### Ver 2.3.0: 将自定义设置转移到settings.json中
+### Ver 2.3.0-B3: 修复了一些奇特的bug
+已知问题与2.3.0-B2相同，但是B3已经是可用状态了  
+### Ver 2.3.0-B2: 将自定义设置转移到settings.json中
 已知问题：  
 **1、您将无法通过修改settings.json来更改音乐服务器/类型/id**  
     解决方法：您可以去music.js中自行修改  
@@ -39,16 +41,5 @@ Based On https://github.com/imsyy/home
 **您可以在main.js中修改你需要修改的变量内容（不要乱改变量名）**  
 **且不用去更改index.html文件**
 ### Ver 2.0：项目正式更名为“Kusunoki-楠”  
-
-### 1.8.1：增加两种预加载动画（共计四种）  
-
-### 1.8：更改预加载动画  
-（从Sakurairo搬过来的，瞳宝别打我wwwwwwwww）  
-
-### 1.7.1：修复天气api  
-
-### 1.7：增加PWA支持  
-
-### 1.0-1.6：我忘了更新了什么了  
   
 [![GitHub release](https://img.shields.io/github/v/release/Shiroiame-Kusu/Kusunoki)](https://github.com/Shiroiame-Kusu/Kusunoki/releases/latest) [![GitHub Release Date](https://img.shields.io/github/release-date/Shiroiame-Kusu/Kusunoki)](https://github.com/Shiroiame-Kusu/Kusunoki/releases) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Shiroiame-Kusu/Kusunoki) <a title="SSL" target="_blank" href="https://myssl.com/seal/detail?domain=bwmc.live"><img src="https://img.shields.io/badge/MySSL-安全认证-brightgreen"></a>

@@ -11,7 +11,7 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 */
 //声明版本
 var release = '2.3.0'
-var version = 'B2'
+var version = 'B3'
 //A表示不稳定内测版本，B表示可用的公测版本但不保证稳定性，RC表示接近正式版的候选版本，R即为正式版
 //建议是不要随意更改
 var final_date = 'Sept.10th.2022'
@@ -20,13 +20,13 @@ var final_version_img = '当前 v' + release + '_' + version
 //预加载动画自定义，1为iro，2为origin，3为recting，4为ring
 var preload_animation = 1
 
-$(function (){
+$(function SetString(){
     var url = './settings.json'
     $.getJSON(
         url,
         function (data) {
         //请去settings.json进行自定义设置，不要不小心把逗号和冒号去掉了
-        //window.preload_animation = data.preload_animation
+        window.preload_animation = data.preload_animation
         github_content = data.github_content
         qq_content = data.qq_content
         email_content = data.email_content
@@ -79,9 +79,6 @@ $(function (){
     )
 })
 
-
-        
-
 //移动端设置
 //更多页面切换
 var showmore = false;
@@ -89,11 +86,15 @@ var showmore = false;
 var switchmenu = false;
 //移动端切换功能区
 var changemore = false;
-
 function preload_animation_choice() {
+    function SetPreloadAnimation(){
+        linkTag = $('<link rel="stylesheet" type="text/css" href="' + cssURL + '"/>')
+        $($('head')[0]).append(linkTag)
+    }
     var preload_customize = document.getElementById("preload-customize")
-    var preload_animation = window.preload_animation
     if(preload_animation == 1) {
+        var cssURL = "./css/preload-iro.css"
+        SetPreloadAnimation();
         preload_customize.innerHTML = preload_customize.innerHTML + `
 <div id="preload">
             <li data-id="3" class="active">
@@ -104,6 +105,8 @@ function preload_animation_choice() {
         `
     }
     else if(preload_animation == 2){
+        var cssURL = "./css/preload-origin.css"
+        SetPreloadAnimation();
         preload_customize.innerHTML = preload_customize.innerHTML + `
         <div id="loading-box">
         <div class="loading-left-bg"></div>
@@ -123,6 +126,8 @@ function preload_animation_choice() {
         `
     }
     else if(preload_animation == 3){
+        var cssURL = "./css/preload-recting.css"
+        SetPreloadAnimation();
         preload_customize.innerHTML = preload_customize.innerHTML + `
         <div class="flex-center">
         <svg class="loading recting" width="40" height="40" viewbox="0 0 40 40">
@@ -132,6 +137,8 @@ function preload_animation_choice() {
         `
     }
     else if(preload_animation == 4){
+        var cssURL = "./css/preload-ring.css"
+        SetPreloadAnimation();
         preload_customize.innerHTML = preload_customize.innerHTML + `
         <div class="flex-center">
         <div class="loading ring"></div>
@@ -139,9 +146,8 @@ function preload_animation_choice() {
         `
     }
     else{
-        //console.clear();
-        console.error(`你在写啥？重新检查一遍预加载动画有没有设置好
-    就是第21行的 preload_animation`)
+        console.clear();
+        console.error("The Value of Preload Animation is invalid")
     }
 }
 preload_animation_choice();
@@ -160,8 +166,6 @@ function tg_click(){window.open(tg_link,'_blank');}
 function twitter_click(){window.open(twitter_link,'_blank');}
 function bilibili_click(){window.open(bilibili_link,'_blank');}
 
-
-
 //弹窗样式
 iziToast.settings({
     timeout: 10000,
@@ -179,10 +183,8 @@ iziToast.settings({
     icon: 'Fontawesome',
     iconColor: '#efefef',
 });
-
 //加载完成后执行
 window.addEventListener('load', function () {
-
     //载入动画
     //Preload Animation
     $('.preload-customize').attr('class', 'loaded');
@@ -522,9 +524,7 @@ for (var day of days) {
         }, false);
     }
     else{
-        var KFC = document.createElement("script");
-        KFC.src = "https://cdn.kusu.moe/KFC-Crazy-Thursday/KFC-crazy-thursday-NO-INSERT.js";
-        document.body.appendChild(KFC);
+        $('KFC').attr('src','https://cdn.kusu.moe/KFC-Crazy-Thursday/KFC-crazy-thursday-NO-INSERT.js')
     }
 }
 

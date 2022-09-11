@@ -31,5 +31,6 @@
     "copyright": "Copyright&nbsp;&copy;&nbsp;2020&nbsp;-&nbsp;2022&nbsp;<a href='https://cmu.bwmc.live'>BWMC&nbsp;Community</a>&nbsp;&nbsp;&nbsp;&&nbsp;&nbsp;&nbsp;<a href='https://cmu.bwmc.live/about-creator/'>Powered&nbsp;By&nbsp;Shiroiame&nbsp;Kusu&nbsp;&nbsp;&</a>&nbsp;",
     "server": "netease",
     "type": "playlist",
-    "id": "7533625421"
+    "id": "7533625421",
+    "preload_animation": 1
 }
