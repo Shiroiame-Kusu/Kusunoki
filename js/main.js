@@ -11,7 +11,7 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 */
 //声明版本
 var release = '2.2.0'
-var version = 'B3'
+var version = 'RC1'
 //A表示不稳定内测版本，B表示可用的公测版本但不保证稳定性，RC表示接近正式版的候选版本，R即为正式版
 //建议是不要随意更改
 var final_date = 'Sept.10th.2022'
