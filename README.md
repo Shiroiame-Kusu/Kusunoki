@@ -29,14 +29,17 @@ Based On https://github.com/imsyy/home
 * [BWMC Random Image Api](https://api.bwmc.live/)
 * [MetingAPI By BWMC Community](https://music-api.bwmc.live)
 ## 更新日志
-### Ver 2.3.0-B3: 修复了一些奇特的bug
-已知问题与2.3.0-B2相同，但是B3已经是可用状态了  
-### Ver 2.3.0-B2: 将自定义设置转移到settings.json中
+### Ver 2.3.0-B4: 增加壁纸设置项，修复无法设置音乐服务器/类型/id的问题
+已知问题：  
+**您将无法通过修改settings.json来指定预加载动画类型**  
+    解决方法：您可以通过修改main.js中第21行preload_animation后面的数值以指定您想要的预加载动画  
+### Ver 2.3.0-B2/B3: 修复了一些奇特的bug
 已知问题：  
 **1、您将无法通过修改settings.json来更改音乐服务器/类型/id**  
     解决方法：您可以去music.js中自行修改  
 **2、您将无法通过修改settings.json来指定预加载动画类型**  
     解决方法：您可以通过修改main.js中第21行preload_animation后面的数值以指定您想要的预加载动画  
+### Ver 2.3.0-B1: 将自定义设置转移到settings.json中
 ### Ver 2.1/2.2: 提供更多/更方便的自定义选项
 **您可以在main.js中修改你需要修改的变量内容（不要乱改变量名）**  
 **且不用去更改index.html文件**

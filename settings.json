@@ -32,5 +32,6 @@
     "server": "netease",
     "type": "playlist",
     "id": "7533625421",
-    "preload_animation": 1
+    "preload_animation": 1,
+    "background_picture": "https://api.bwmc.live/api/"
 }

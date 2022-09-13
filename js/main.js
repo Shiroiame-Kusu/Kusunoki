@@ -11,16 +11,16 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 */
 //声明版本
 var release = '2.3.0'
-var version = 'B3'
+var version = 'B4'
 //A表示不稳定内测版本，B表示可用的公测版本但不保证稳定性，RC表示接近正式版的候选版本，R即为正式版
 //建议是不要随意更改
-var final_date = 'Sept.10th.2022'
+var final_date = 'Sept.13th.2022'
 var final_version = release + '-' + version
 var final_version_img = '当前 v' + release + '_' + version
 //预加载动画自定义，1为iro，2为origin，3为recting，4为ring
 var preload_animation = 1
 
-$(function SetString(){
+$(function (){
     var url = './settings.json'
     $.getJSON(
         url,
@@ -57,8 +57,37 @@ $(function SetString(){
         //设置头像旁文本，建议是短域名这样用，炸了不负责
         logo_text1 = data.logo_text1
         logo_text2 = data.logo_text2
+        var background_picture = data.background_picture
         //标题
         title = data.title
+        //随机默认壁纸
+        //设置背景
+             var BG_error = 'An error occurred while trying to fetch the background picture, please check the settings you set is correct or not.'
+             
+             function DetectLink(){
+                var result = 0;
+                $.ajax({
+                url: background_picture,
+                type: 'GET',
+                complete: function(response){
+                 if(response.status == 404 ){
+                    console.error(BG_error)
+                 }else{result = 2}
+                }});
+                return result;
+                }
+               var LinkAvailability = DetectLink()
+            
+            function SetBG(){
+            if (LinkAvailability == 2) {
+                $('#bg').attr('src', background_picture)
+              }
+              else {
+                $('#bg').attr('src', 'https://api.bwmc.live/pc/')
+                //console.error(BG_error)
+              }
+            }
+        SetBG();
         $('title').html(title)
         //版权所有
         copyright = data.copyright
