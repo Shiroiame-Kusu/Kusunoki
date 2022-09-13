@@ -14,6 +14,11 @@
     "change_content_click2": "哎呀，这都被你发现了（ 再点击一次可关闭 ）",
     "change_content1": "Where?&nbsp;No&nbsp;Where!",
     "change_content2": "The OOM Part Of BWMC, For Me",
+    "button_text_1": "社区",
+    "button_text_2": "获取支持",
+    "button_text_3": "实验性站点",
+    "button_text_4": "起始页",
+    "button_text_5": "友链",
     "button_link_1": "https://cmu.bwmc.live/",
     "button_link_2": "https://support.kusu.moe/",
     "button_link_3": "https://amenai.ml/",
@@ -33,5 +38,6 @@
     "type": "playlist",
     "id": "7533625421",
     "preload_animation": 1,
-    "background_picture": "https://api.bwmc.live/api/"
+    "background_picture": "https://api.bwmc.live/api/",
+    "debug": "true"
 }

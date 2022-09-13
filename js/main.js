@@ -11,14 +11,12 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 */
 //声明版本
 var release = '2.3.0'
-var version = 'B4'
-//A表示不稳定内测版本，B表示可用的公测版本但不保证稳定性，RC表示接近正式版的候选版本，R即为正式版
-//建议是不要随意更改
-var final_date = 'Sept.13th.2022'
+var version = 'B6'
+
+var final_date = 'Sept.13th.2022'//Special Date?
 var final_version = release + '-' + version
 var final_version_img = '当前 v' + release + '_' + version
 //预加载动画自定义，1为iro，2为origin，3为recting，4为ring
-var preload_animation = 1
 
 $(function (){
     var url = './settings.json'
@@ -26,7 +24,7 @@ $(function (){
         url,
         function (data) {
         //请去settings.json进行自定义设置，不要不小心把逗号和冒号去掉了
-        window.preload_animation = data.preload_animation
+        //window.preload_animation = data.preload_animation
         github_content = data.github_content
         qq_content = data.qq_content
         email_content = data.email_content
@@ -60,6 +58,13 @@ $(function (){
         var background_picture = data.background_picture
         //标题
         title = data.title
+        DebugInfo = data.debug
+        if(DebugInfo == 'true'){
+            console.log("Debug Mode is on.")
+        }
+        else{
+            console.clear();
+        }
         //随机默认壁纸
         //设置背景
              var BG_error = 'An error occurred while trying to fetch the background picture, please check the settings you set is correct or not.'
@@ -69,6 +74,7 @@ $(function (){
                 $.ajax({
                 url: background_picture,
                 type: 'GET',
+                async: false,
                 complete: function(response){
                  if(response.status == 404 ){
                     console.error(BG_error)
@@ -84,7 +90,6 @@ $(function (){
               }
               else {
                 $('#bg').attr('src', 'https://api.bwmc.live/pc/')
-                //console.error(BG_error)
               }
             }
         SetBG();
@@ -104,7 +109,14 @@ $(function (){
         $('#domain-2').html(logo_text2)
         //社交链接区域显示文本
         $("#link-text").html(mouseout_content)
-        }
+        //五个Button文本自定义
+        $("#button_text_1").html(data.button_text_1)
+        $("#button_text_2").html(data.button_text_2)
+        $("#button_text_3").html(data.button_text_3)
+        $("#button_text_4").html(data.button_text_4)
+        $("#button_text_5").html(data.button_text_5)
+        ProjectInfo();
+    }
     )
 })
 
@@ -115,7 +127,24 @@ var showmore = false;
 var switchmenu = false;
 //移动端切换功能区
 var changemore = false;
+
 function preload_animation_choice() {
+    function SetPreloadAnimationValue(){
+        var result = 0;
+        var url = './settings.json'
+        $.ajax({
+            url: url,
+            type: 'GET',
+            async: false,
+            success: function(data){
+                result = data.preload_animation
+            }
+        });
+        return result;
+    }
+    
+    var preload_animation = SetPreloadAnimationValue()
+    
     function SetPreloadAnimation(){
         linkTag = $('<link rel="stylesheet" type="text/css" href="' + cssURL + '"/>')
         $($('head')[0]).append(linkTag)
@@ -176,7 +205,7 @@ function preload_animation_choice() {
     }
     else{
         console.clear();
-        console.error("The Value of Preload Animation is invalid")
+        console.error("A error occurred while trying to apply the setting of Preload Animation, please check your settings")
     }
 }
 preload_animation_choice();
@@ -598,5 +627,7 @@ Based on https://github.com/imsyy/home
 Preload Animation based on https://github.com/mirai-mamori/Sakurairo
                            https://github.com/CiroLee/html_css_javascript
 `
-console.log(`%c${title1} %c${title2}
+function ProjectInfo(){
+    console.log(`%c${title1} %c${title2}
 %c${content} %c${content0}`, styleTitle1, styleTitle2, styleContent, styleContent0)
+}
