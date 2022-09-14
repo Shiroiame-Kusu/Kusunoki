@@ -11,9 +11,9 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 */
 //声明版本
 var release = '2.3.0'
-var version = 'B6'
+var version = 'RC1'
 
-var final_date = 'Sept.13th.2022'//Special Date?
+var final_date = 'Sept.14th.2022'//Yesterday is a Special Date
 var final_version = release + '-' + version
 var final_version_img = '当前 v' + release + '_' + version
 //预加载动画自定义，1为iro，2为origin，3为recting，4为ring

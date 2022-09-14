@@ -34,6 +34,7 @@
     "logo_text2": ".live",
     "logo_img": "./img/icon/logo.png",
     "copyright": "Copyright&nbsp;&copy;&nbsp;2020&nbsp;-&nbsp;2022&nbsp;<a href='https://cmu.bwmc.live'>BWMC&nbsp;Community</a>&nbsp;&nbsp;&nbsp;&&nbsp;&nbsp;&nbsp;<a href='https://cmu.bwmc.live/about-creator/'>Powered&nbsp;By&nbsp;Shiroiame&nbsp;Kusu&nbsp;&nbsp;&</a>&nbsp;",
+    "MetingAPI": "https://music-api.bwmc.live",
     "server": "netease",
     "type": "playlist",
     "id": "7533625421",
