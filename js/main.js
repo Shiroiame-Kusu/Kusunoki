@@ -10,10 +10,9 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 版权所有，请勿删除
 */
 //声明版本
-var release = '2.3.0'
-var version = 'RC2'
-
-var final_date = 'Sept.14th.2022'//Yesterday is a Special Date
+var release = '2.3.1'
+var version = 'B1'
+var final_date = 'Sept.15th.2022'//Always Complain.
 var final_version = release + '-' + version
 var final_version_img = '当前 v' + release + '_' + version
 //预加载动画自定义，1为iro，2为origin，3为recting，4为ring
@@ -115,8 +114,12 @@ $(function (){
         $("#button_text_4").html(data.button_text_4)
         $("#button_text_5").html(data.button_text_5)
         ProjectInfo();
-    }
-    )
+        if(KFCValue == 1){
+            var kfc = document.createElement("script");
+            kfc.src = "https://cdn.kusu.moe/KFC-Crazy-Thursday/KFC-crazy-thursday-NO-INSERT.js";
+            document.body.appendChild(kfc);
+        }
+    })
 })
 
 //移动端设置
@@ -580,10 +583,12 @@ for (var day of days) {
             });
         }, false);
     }
+    else{
+        KFCValue = 1
+    }
 }
-
+console.log(KFCValue)
 //控制台输出
-
 var styleTitle1 = `
 font-size: 20px;
 font-weight: 600;
@@ -624,6 +629,6 @@ Preload Animation based on https://github.com/mirai-mamori/Sakurairo
                            https://github.com/CiroLee/html_css_javascript
 `
 function ProjectInfo(){
-    console.log(`%c${title1} %c${title2}
+console.log(`%c${title1} %c${title2}
 %c${content} %c${content0}`, styleTitle1, styleTitle2, styleContent, styleContent0)
 }
