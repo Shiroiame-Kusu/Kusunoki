@@ -11,7 +11,7 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 */
 //声明版本
 var release = '2.3.0'
-var version = 'RC1'
+var version = 'RC2'
 
 var final_date = 'Sept.14th.2022'//Yesterday is a Special Date
 var final_version = release + '-' + version
@@ -24,7 +24,6 @@ $(function (){
         url,
         function (data) {
         //请去settings.json进行自定义设置，不要不小心把逗号和冒号去掉了
-        //window.preload_animation = data.preload_animation
         github_content = data.github_content
         qq_content = data.qq_content
         email_content = data.email_content
@@ -580,9 +579,6 @@ for (var day of days) {
                 message: '今天是中国国家纪念日'
             });
         }, false);
-    }
-    else{
-        $('KFC').attr('src','https://cdn.kusu.moe/KFC-Crazy-Thursday/KFC-crazy-thursday-NO-INSERT.js')
     }
 }
 
