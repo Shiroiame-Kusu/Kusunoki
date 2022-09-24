@@ -11,11 +11,10 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 */
 //声明版本
 var release = '2.3.1'
-var version = 'B1'
-var final_date = 'Sept.15th.2022'//Always Complain.
+var version = 'B2'
+var final_date = 'Sept.25th.2022'//To be continued. My life.
 var final_version = release + '-' + version
 var final_version_img = '当前 v' + release + '_' + version
-//预加载动画自定义，1为iro，2为origin，3为recting，4为ring
 
 $(function (){
     var url = './settings.json'
@@ -275,7 +274,7 @@ window.addEventListener('load', function () {
     //中文字体缓加载-此处写入字体源文件
     const font = new FontFace(
         "MiSans",
-        "url(" + "https://api.bwmc.live/fonts/MiSans-Regular.woff2" + ")"
+        "url(" + "https://cdn.kusu.moe/fonts/MiSans-Regular.woff2" + ")"
         //"url(" + "./font/MiSans-Regular.woff2" + ")"
     );
     document.fonts.add(font);
@@ -587,7 +586,6 @@ for (var day of days) {
         KFCValue = 1
     }
 }
-console.log(KFCValue)
 //控制台输出
 var styleTitle1 = `
 font-size: 20px;
@@ -630,5 +628,4 @@ Preload Animation based on https://github.com/mirai-mamori/Sakurairo
 `
 function ProjectInfo(){
 console.log(`%c${title1} %c${title2}
-%c${content} %c${content0}`, styleTitle1, styleTitle2, styleContent, styleContent0)
-}
+%c${content} %c${content0}`, styleTitle1, styleTitle2, styleContent, styleContent0)}
