@@ -11,8 +11,8 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 */
 //声明版本
 var release = '2.3.1'
-var version = 'B2'
-var final_date = 'Sept.25th.2022'//To be continued. My life.
+var version = 'B3'
+var final_date = 'Oct.5th.2022'//A nice day, right?
 var final_version = release + '-' + version
 var final_version_img = '当前 v' + release + '_' + version
 
@@ -56,12 +56,8 @@ $(function (){
         //标题
         title = data.title
         DebugInfo = data.debug
-        if(DebugInfo == 'true'){
-            console.log("Debug Mode is on.")
-        }
-        else{
-            console.clear();
-        }
+        DetectLinkIf = data.detectlink
+        
         //随机默认壁纸
         //设置背景
              var BG_error = 'An error occurred while trying to fetch the background picture, please check the settings you set is correct or not.'
@@ -73,20 +69,29 @@ $(function (){
                 type: 'GET',
                 async: false,
                 complete: function(response){
-                 if(response.status == 404 ){
-                    console.error(BG_error)
-                 }else{result = 2}
-                }});
-                return result;
+                 if(response.status == 200 || response.status == 301 || response.status == 302){
+                    result = 2
+                 }
+                 else{console.error(BG_error)}
                 }
-               var LinkAvailability = DetectLink()
+            });
+                return result;
+        }
+                
+            if(DetectLinkIf == 'true'){
+                console.log("Detect Random Image Link is on.")
+                LinkAvailability = DetectLink()
+            }else{
+                LinkAvailability = 2
+            }
+               
             
             function SetBG(){
             if (LinkAvailability == 2) {
                 $('#bg').attr('src', background_picture)
               }
               else {
-                $('#bg').attr('src', 'https://api.bwmc.live/pc/')
+                $('#bg').attr('src', 'https://api.bwmc.live/api/')
               }
             }
         SetBG();
@@ -112,6 +117,12 @@ $(function (){
         $("#button_text_3").html(data.button_text_3)
         $("#button_text_4").html(data.button_text_4)
         $("#button_text_5").html(data.button_text_5)
+        if(DebugInfo == 'true'){
+            console.log("Debug Mode is on.")
+        }
+        else{
+            console.clear();
+        }
         ProjectInfo();
         if(KFCValue == 1){
             var kfc = document.createElement("script");
@@ -274,8 +285,7 @@ window.addEventListener('load', function () {
     //中文字体缓加载-此处写入字体源文件
     const font = new FontFace(
         "MiSans",
-        "url(" + "https://cdn.kusu.moe/fonts/MiSans-Regular.woff2" + ")"
-        //"url(" + "./font/MiSans-Regular.woff2" + ")"
+        "url(" + "./font/MiSans-Regular.woff2" + ")"
     );
     document.fonts.add(font);
     

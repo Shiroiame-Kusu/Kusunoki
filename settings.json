@@ -2,7 +2,7 @@
     "title":"BWMC OOM Part",
     "description": "The OOM Part Of BWMC,For Me",
     "keywords": "BWMC,筱烷,白雨楠",
-    "author": "白雨楠",
+    "author": "白雨 楠",
     "github_content": "去 Github 看看",
     "qq_content": "有什么事吗",
     "email_content": "来封 Email",
@@ -10,10 +10,10 @@
     "twitter_content": "Don't do this",
     "bilibili_content": "来 B 站看看 ~",
     "mouseout_content": "或许我......在这里",
-    "change_content_click1": "Oops&nbsp;!",
-    "change_content_click2": "哎呀，这都被你发现了（ 再点击一次可关闭 ）",
     "change_content1": "Where?&nbsp;No&nbsp;Where!",
     "change_content2": "The OOM Part Of BWMC, For Me",
+    "change_content_click1": "Oops&nbsp;!",
+    "change_content_click2": "哎呀，这都被你发现了（再点击一次可切换）",
     "button_text_1": "社区",
     "button_text_2": "获取支持",
     "button_text_3": "实验性站点",
@@ -39,6 +39,8 @@
     "type": "playlist",
     "id": "7533625421",
     "preload_animation": 1,
-    "background_picture": "https://api.bwmc.live/api/",
-    "debug": "true"
+    "preload_animation_description": "你可以修改后面的数值来切换预加载画面，分别为1，2，3，4",
+    "background_picture": "https://api.kusu.icu/api/",
+    "debug": "false",
+    "detectlink": "false"
 }
