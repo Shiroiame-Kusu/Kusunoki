@@ -1,9 +1,4 @@
 /*
-原作者: imsyy
-主页：https://www.imsyy.top/
-GitHub：https://github.com/imsyy/home
-版权所有，请勿删除
-
 作者: Shiroiame Kusu
 主页：https://bwmc.live/
 GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
@@ -11,8 +6,8 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 */
 //声明版本
 var release = '2.3.1'
-var version = 'B3'
-var final_date = 'Oct.5th.2022'//A nice day, right?
+var version = 'B5'
+var final_date = 'Oct.7th.2022'//Vacation is Over!
 var final_version = release + '-' + version
 var final_version_img = '当前 v' + release + '_' + version
 
@@ -34,15 +29,11 @@ $(function (){
         change_content_click2 = data.change_content_click2
         change_content1 = data.change_content1
         change_content2 = data.change_content2
-        //5个button的链接自定义
-        //上3
         button_link_1 = data.button_link_1
         button_link_2 = data.button_link_2
         button_link_3 = data.button_link_3
-        //下2
         button_link_4 = data.button_link_4
         button_link_5 = data.button_link_5
-        //社交链接自定义
         github_link = data.github_link
         qq_link = data.qq_link
         email_link = data.email_link
@@ -57,13 +48,12 @@ $(function (){
         title = data.title
         DebugInfo = data.debug
         DetectLinkIf = data.detectlink
-        
         //随机默认壁纸
         //设置背景
-             var BG_error = 'An error occurred while trying to fetch the background picture, please check the settings you set is correct or not.'
+        var BG_error = 'An error occurred while trying to fetch the background picture, please check the settings.'
              
-             function DetectLink(){
-                var result = 0;
+        function DetectLink(){
+            var result = 0;
                 $.ajax({
                 url: background_picture,
                 type: 'GET',
@@ -72,20 +62,26 @@ $(function (){
                  if(response.status == 200 || response.status == 301 || response.status == 302){
                     result = 2
                  }
-                 else{console.error(BG_error)}
+                 else if(response.status == 400 || response.status == 403 || response.status == 404 || response.status == 500 || response.status == 501 || response.status == 502 || response.status == 504){
+                    console.error(BG_error)
+                        result = null
+                 }
+                 else{
+                        console.error(BG_error)
+                        result = null
+                    }
                 }
             });
-                return result;
+            return result;
         }
                 
             if(DetectLinkIf == 'true'){
-                console.log("Detect Random Image Link is on.")
+                console.log("Check 'Random Image API' is on.")
                 LinkAvailability = DetectLink()
             }else{
                 LinkAvailability = 2
             }
                
-            
             function SetBG(){
             if (LinkAvailability == 2) {
                 $('#bg').attr('src', background_picture)
@@ -96,22 +92,17 @@ $(function (){
             }
         SetBG();
         $('title').html(title)
-        //版权所有
         copyright = data.copyright
         $("#power").html(copyright)
         $("meta[name='description']").attr('content', data.description);
         $("meta[name='keywords']").attr('content', data.keywords);
         $("meta[name='author']").attr('content', data.author);
         $('#logo-img').attr('src', data.logo_img)
-        //骚操作
         $('#change').html(change_content1)
         $('#change1').html(change_content2)
-        //应用头像旁文本
         $('#domain-1').html(logo_text1)
         $('#domain-2').html(logo_text2)
-        //社交链接区域显示文本
         $("#link-text").html(mouseout_content)
-        //五个Button文本自定义
         $("#button_text_1").html(data.button_text_1)
         $("#button_text_2").html(data.button_text_2)
         $("#button_text_3").html(data.button_text_3)

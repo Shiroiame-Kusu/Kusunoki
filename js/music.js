@@ -1,14 +1,4 @@
 /*
-音乐信息
-
-使用自建的 MetingAPI 覆盖原项目的MetingAPI
-目前仅支持网易云与QQ,未启用强制https/HSTS
-https://music-api.bwmc.live/
-
-原作者: imsyy
-主页：https://www.imsyy.top/
-GitHub：https://github.com/imsyy/home
-
 作者: Shiroiame Kusu
 主页：https://bwmc.live/
 GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
