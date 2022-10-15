@@ -6,8 +6,8 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 */
 //声明版本
 var release = '2.3.1'
-var version = 'B5'
-var final_date = 'Oct.7th.2022'//Vacation is Over!
+var version = 'B6'
+var final_date = 'Oct.15th.2022'//Coming back!
 var final_version = release + '-' + version
 var final_version_img = '当前 v' + release + '_' + version
 
@@ -51,7 +51,8 @@ $(function (){
         //随机默认壁纸
         //设置背景
         var BG_error = 'An error occurred while trying to fetch the background picture, please check the settings.'
-             
+        var BG_error2 = 'The Background Image API is invalid, please check the settings.'
+        var BG_Warning = 'The Background Image API is using 301/302 redirect, so this function may be not working.'     
         function DetectLink(){
             var result = 0;
                 $.ajax({
@@ -59,7 +60,11 @@ $(function (){
                 type: 'GET',
                 async: false,
                 complete: function(response){
-                 if(response.status == 200 || response.status == 301 || response.status == 302){
+                 if(response.status == 200){
+                    result = 2
+                 }
+                 else if(response.status == 301 || response.status == 302){
+                    console.warn(BG_Warning)
                     result = 2
                  }
                  else if(response.status == 400 || response.status == 403 || response.status == 404 || response.status == 500 || response.status == 501 || response.status == 502 || response.status == 504){
@@ -67,7 +72,7 @@ $(function (){
                         result = null
                  }
                  else{
-                        console.error(BG_error)
+                        console.error(BG_error2)
                         result = null
                     }
                 }
