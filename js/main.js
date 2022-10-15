@@ -6,8 +6,8 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 */
 //声明版本
 var release = '2.3.1'
-var version = 'B6'
-var final_date = 'Oct.15th.2022'//Coming back!
+var version = 'B7'
+var final_date = 'Oct.15th.2022'//I Know I'm "Touching Fish"
 var final_version = release + '-' + version
 var final_version_img = '当前 v' + release + '_' + version
 
@@ -50,6 +50,7 @@ $(function (){
         DetectLinkIf = data.detectlink
         //随机默认壁纸
         //设置背景
+        var BG_Good = 'Check Passed.'
         var BG_error = 'An error occurred while trying to fetch the background picture, please check the settings.'
         var BG_error2 = 'The Background Image API is invalid, please check the settings.'
         var BG_Warning = 'The Background Image API is using 301/302 redirect, so this function may be not working.'     
@@ -62,6 +63,7 @@ $(function (){
                 complete: function(response){
                  if(response.status == 200){
                     result = 2
+                    console.log(BG_Good)
                  }
                  else if(response.status == 301 || response.status == 302){
                     console.warn(BG_Warning)
@@ -92,13 +94,12 @@ $(function (){
                 $('#bg').attr('src', background_picture)
               }
               else {
-                $('#bg').attr('src', 'https://api.bwmc.live/api/')
+                $('#bg').attr('src', 'https://api.kusu.api/api/')
               }
             }
         SetBG();
         $('title').html(title)
-        copyright = data.copyright
-        $("#power").html(copyright)
+        $("#power").html(data.copyright)
         $("meta[name='description']").attr('content', data.description);
         $("meta[name='keywords']").attr('content', data.keywords);
         $("meta[name='author']").attr('content', data.author);

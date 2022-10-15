@@ -13,7 +13,8 @@ Based On https://github.com/imsyy/home
 - [x] 时光进度条
 - [x] 音乐播放器
 - [x] 移动端适配
-- [x] 完全化自定义
+- [x] 完全化自定义  
+您现在可以通过更改根目录下的settings.json来对项目进行自定义，可实现1分钟创建一个属于您的站点
 ### 插件
 * [Bootstrap](https://getbootstrap.com/)
 * [iziToast](https://izitoast.marcelodolza.com/)
@@ -30,6 +31,7 @@ Based On https://github.com/imsyy/home
 * [MetingAPI By BWMC Community](https://music-api.bwmc.live)
 ## 更新日志
 A表示不稳定内测版本，B表示可用的公测版本但不保证稳定性，RC表示接近正式版的候选版本，R即为正式版
+### **Ver 2.3.1-B1 to B7: 我也不知道我改了什么**
 ### **Ver 2.3.0-B6: 加入五个Button的文本自定义**
 ### **Ver 2.3.0-B5: 修复“无法通过settings.json指定预加载动画类型”**
 ### **Ver 2.3.0-B4: 增加壁纸设置项，修复无法设置音乐服务器/类型/id的问题**
