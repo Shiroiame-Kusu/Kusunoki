@@ -14,7 +14,7 @@ Based On https://github.com/imsyy/home
 - [x] 音乐播放器
 - [x] 移动端适配
 - [x] 完全化自定义  
-您现在可以通过更改根目录下的settings.json来对项目进行自定义，可实现1分钟创建一个属于您的站点
+**您现在可以通过更改根目录下的settings.json来对项目进行自定义，可实现1分钟创建一个属于您的站点**
 ### 插件
 * [Bootstrap](https://getbootstrap.com/)
 * [iziToast](https://izitoast.marcelodolza.com/)
@@ -30,22 +30,15 @@ Based On https://github.com/imsyy/home
 * [BWMC Random Image Api](https://api.bwmc.live/)
 * [MetingAPI By BWMC Community](https://music-api.bwmc.live)
 ## 更新日志
-A表示不稳定内测版本，B表示可用的公测版本但不保证稳定性，RC表示接近正式版的候选版本，R即为正式版
-### **Ver 2.3.1-B1 to B7: 我也不知道我改了什么**
-### **Ver 2.3.0-B6: 加入五个Button的文本自定义**
-### **Ver 2.3.0-B5: 修复“无法通过settings.json指定预加载动画类型”**
-### **Ver 2.3.0-B4: 增加壁纸设置项，修复无法设置音乐服务器/类型/id的问题**
-已知问题：  
-**您将无法通过修改settings.json来指定预加载动画类型**  
-    解决方法：您可以通过修改main.js中第21行preload_animation后面的数值以指定您想要的预加载动画  
-### Ver 2.3.0-B2/B3: 修复了一些奇特的bug
-已知问题：  
-**1、您将无法通过修改settings.json来更改音乐服务器/类型/id**  
-**2、您将无法通过修改settings.json来指定预加载动画类型**  
-### Ver 2.3.0-B1: 将自定义设置转移到settings.json中
+A表示不稳定内测版本，B表示可用的公测版本但不保证稳定性  
+RC表示接近正式版的候选版本，R即为正式版  
+### **Ver 2.3.1-B1 to B7: 我也不知道我改了什么** 
+### Ver 2.3.0：您可以通过修改settings.json来自定义您的网站
 ### Ver 2.1/2.2: 提供更多/更方便的自定义选项
 **您可以在main.js中修改你需要修改的变量内容（不要乱改变量名）**  
 **且不用去更改index.html文件**
 ### Ver 2.0：项目正式更名为“Kusunoki-楠”  
+
+### settings.json的详细设置教程将与2.3.2一同推出
   
 [![GitHub release](https://img.shields.io/github/v/release/Shiroiame-Kusu/Kusunoki)](https://github.com/Shiroiame-Kusu/Kusunoki/releases/latest) [![GitHub Release Date](https://img.shields.io/github/release-date/Shiroiame-Kusu/Kusunoki)](https://github.com/Shiroiame-Kusu/Kusunoki/releases) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Shiroiame-Kusu/Kusunoki) <a title="SSL" target="_blank" href="https://myssl.com/seal/detail?domain=bwmc.live"><img src="https://img.shields.io/badge/MySSL-安全认证-brightgreen"></a>

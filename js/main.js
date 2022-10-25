@@ -6,7 +6,7 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 */
 //声明版本
 var release = '2.3.1'
-var version = 'B7'
+var version = 'B8'
 var final_date = 'Oct.15th.2022'//I Know I'm "Touching Fish"
 var final_version = release + '-' + version
 var final_version_img = '当前 v' + release + '_' + version
@@ -50,7 +50,7 @@ $(function (){
         DetectLinkIf = data.detectlink
         //随机默认壁纸
         //设置背景
-        var BG_Good = 'Check Passed.'
+        var BG_Good = 'Check Passed. Maybe.'
         var BG_error = 'An error occurred while trying to fetch the background picture, please check the settings.'
         var BG_error2 = 'The Background Image API is invalid, please check the settings.'
         var BG_Warning = 'The Background Image API is using 301/302 redirect, so this function may be not working.'     
@@ -94,7 +94,7 @@ $(function (){
                 $('#bg').attr('src', background_picture)
               }
               else {
-                $('#bg').attr('src', 'https://api.kusu.api/api/')
+                $('#bg').attr('src', 'https://api.kusu.icu/api/')
               }
             }
         SetBG();
