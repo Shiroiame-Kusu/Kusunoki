@@ -6,8 +6,8 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 */
 //声明版本
 var release = '2.3.1'
-var version = 'B8'
-var final_date = 'Oct.15th.2022'//I Know I'm "Touching Fish"
+var version = 'RC0'
+var final_date = 'Nov.22th.2022'//I Know I'm "Touching Fish"
 var final_version = release + '-' + version
 var final_version_img = '当前 v' + release + '_' + version
 
