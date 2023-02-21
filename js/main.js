@@ -5,8 +5,8 @@ GitHub：https://github.com/Shiroiame-Kusu/Kusunoki
 版权所有，请勿删除
 */
 //声明版本
-var release = '2.3.1'
-var version = 'RC0'
+var release = '2.4.0'
+var version = 'A1'
 var final_date = 'Nov.22th.2022'//I Know I'm "Touching Fish"
 var final_version = release + '-' + version
 var final_version_img = '当前 v' + release + '_' + version
@@ -48,6 +48,38 @@ $(function (){
         title = data.title
         DebugInfo = data.debug
         DetectLinkIf = data.detectlink
+        var social = document.getElementsById("social").innerHTML
+        //检查社交图标链接
+        if(github_link != null){
+            social = social + `<a onclick="github_click()" class="link" id="github" style="margin-left: 4px">
+            <i class="fa-brands fa-github"></i>
+        </a>`
+        }
+        if(qq_link != null){
+            social = social + `<a onclick="qq_click()" class="link" id="qq">
+            <i class="fa-brands fa-qq"></i>
+        </a>`
+        }
+        if(email_link != null){
+            social = social + `<a onclick="email_click()" class="link" id="email">
+            <i class="fa-solid fa-envelope"></i>
+        </a>`
+        }
+        if(tg_link != null){
+            social = social + `<a onclick="tg_click()" class="link" id="telegram">
+            <i class="fa-brands fa-telegram"></i>
+        </a>`
+        }
+        if(twitter_link != null){
+            social = social + `<a onclick="twitter_click()" class="link" id="twitter">
+            <i class="fa-brands fa-twitter"></i>
+        </a>`
+        }
+        if(bilibili_link != null){
+            social = social + `<a onclick="bilibili_click()" class="link" id="bilibili">
+            <i class="fa-brands fa-bilibili"></i>
+        </a>`
+        }
         //随机默认壁纸
         //设置背景
         var BG_Good = 'Check Passed. Maybe.'
